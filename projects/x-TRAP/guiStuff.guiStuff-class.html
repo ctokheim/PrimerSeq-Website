@@ -1,0 +1,2163 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>guiStuff.guiStuff</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://code.google.com/p/mouse-stage-control-code/">x-TRAP</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="guiStuff-module.html">Module&nbsp;guiStuff</a> ::
+        Class&nbsp;guiStuff
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="guiStuff.guiStuff-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class guiStuff</h1><p class="nomargin-top"><span class="codelink"><a href="guiStuff-pysrc.html#guiStuff">source&nbsp;code</a></span></p>
+<p>guiStuff is the class that is the main interface for the user in the 
+  StageControlGui project. Class guiStuff instantiation is necesary and 
+  sufficient to allow the user full functionality of the StageControlGui 
+  project (This is done in Driver.py). Class guiStuff has two nested 
+  classes, GetFiducialPoints and CreateCsv. GetFiducialPoints obtains the 
+  necessary fiducial points when executing a move originating from CT 
+  coordinates. CreateCsv is an editor for lists of moves. guiStuff contains
+  attributes tubeCurrentCommand (which is what is executed in a move) and 
+  planCurrentCommand (which is the CT coordinates + fiducials of the 
+  current command). There are a similar list versions of the previous 
+  attributes that are accessed in the GUI only at the value of listIndex. 
+  zeroPosition contains the zero position of the stages.</p>
+
+<!-- ==================== NESTED CLASSES ==================== -->
+<a name="section-NestedClasses"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Nested Classes</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-NestedClasses"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="guiStuff.SetZeroPoint-class.html" class="summary-name">SetZeroPoint</a>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="guiStuff.GetFiducialPoints-class.html" class="summary-name">GetFiducialPoints</a><br />
+      Fiducial dialog to obtain the fiducial points necessary to 
+        transform a treatment point in a CT image to the tube coordinates.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="guiStuff.CreateCsv-class.html" class="summary-name">CreateCsv</a><br />
+      CreateCsv is a Dialog (inherits from Dialog) that edits and creates
+        list commands.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="guiStuff.SetTubeDimension-class.html" class="summary-name">SetTubeDimension</a>
+    </td>
+  </tr>
+</table>
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="__init__"></a><span class="summary-sig-name">__init__</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">debug</span>=<span class="summary-sig-default">False</span>)</span><br />
+      Initializes GUI to serve as the main interface for stage control.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="guiStuff-pysrc.html#guiStuff.__init__">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="about"></a><span class="summary-sig-name">about</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Opens the wiki for the stage control project.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="guiStuff-pysrc.html#guiStuff.about">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="arcTreatment"></a><span class="summary-sig-name">arcTreatment</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Calls the Arc Treatment function after retrieveing the desired amount
+      of rotation from the rotationEntryField and the desired speed from 
+      the speedEntryField</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="guiStuff-pysrc.html#guiStuff.arcTreatment">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="guiStuff.guiStuff-class.html#affineTransform" class="summary-sig-name">affineTransform</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">plan_command</span>)</span><br />
+      Converts the CT coordinate of the treatment target to the proper 
+      stage movement coordinate in The x-TRAP.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="guiStuff-pysrc.html#guiStuff.affineTransform">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="centerTube"></a><span class="summary-sig-name">centerTube</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Centers the tube under the radiation source for imaging.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="guiStuff-pysrc.html#guiStuff.centerTube">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="clearSettings"></a><span class="summary-sig-name">clearSettings</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="guiStuff-pysrc.html#guiStuff.clearSettings">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="guiStuff.guiStuff-class.html#createCsv" class="summary-sig-name">createCsv</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Clears the loaded list and then allows the user to create a 
+      completely new command list.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="guiStuff-pysrc.html#guiStuff.createCsv">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="dicomMove"></a><span class="summary-sig-name">dicomMove</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="guiStuff-pysrc.html#guiStuff.dicomMove">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="disable"></a><span class="summary-sig-name">disable</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      During stage movement buttons are disabled by the disable method.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="guiStuff-pysrc.html#guiStuff.disable">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="enableSettingsModification"></a><span class="summary-sig-name">enableSettingsModification</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">state</span>=<span class="summary-sig-default">True</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="guiStuff-pysrc.html#guiStuff.enableSettingsModification">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="enable"></a><span class="summary-sig-name">enable</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      enable sets all the buttons to normal functionality after a move 
+      command.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="guiStuff-pysrc.html#guiStuff.enable">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="goToDocumentation"></a><span class="summary-sig-name">goToDocumentation</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Opens page that contains documentation links.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="guiStuff-pysrc.html#guiStuff.goToDocumentation">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="heightSelect"></a><span class="summary-sig-name">heightSelect</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*args</span>)</span><br />
+      Starts a dialog that suggests elevation of collimator and size of 
+      apperature given a treatment size.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="guiStuff-pysrc.html#guiStuff.heightSelect">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="help"></a><span class="summary-sig-name">help</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Opens the help manual.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="guiStuff-pysrc.html#guiStuff.help">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="guiStuff.guiStuff-class.html#home" class="summary-sig-name">home</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Homes all stages to the absolute zero point of the stages (not to 
+      middle of the stages as defined by guiStuff.zeroPoint).</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="guiStuff-pysrc.html#guiStuff.home">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="guiStuff.guiStuff-class.html#isValid" class="summary-sig-name">isValid</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Checks for valid csv file format.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="guiStuff-pysrc.html#guiStuff.isValid">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="isValidZeroConfig"></a><span class="summary-sig-name">isValidZeroConfig</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">x</span>,
+        <span class="summary-sig-arg">y</span>,
+        <span class="summary-sig-arg">z</span>,
+        <span class="summary-sig-arg">degree</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="guiStuff-pysrc.html#guiStuff.isValidZeroConfig">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="isValidDimensionConfig"></a><span class="summary-sig-name">isValidDimensionConfig</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">diameter</span>,
+        <span class="summary-sig-arg">length</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="guiStuff-pysrc.html#guiStuff.isValidDimensionConfig">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="guiStuff.guiStuff-class.html#isValidRow" class="summary-sig-name">isValidRow</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">row</span>)</span><br />
+      Checks if a single command row is valid.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="guiStuff-pysrc.html#guiStuff.isValidRow">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="guiStuff.guiStuff-class.html#isValidRowRelative" class="summary-sig-name">isValidRowRelative</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">row</span>)</span><br />
+      Checks if a single command row is valid.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="guiStuff-pysrc.html#guiStuff.isValidRowRelative">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="guiStuff.guiStuff-class.html#listAffineTransform" class="summary-sig-name">listAffineTransform</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      When a list of commands is loaded by loadCsv, the listAffineTransform
+      is called to transform all commands to tube coordinates and return 
+      the values.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="guiStuff-pysrc.html#guiStuff.listAffineTransform">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="guiStuff.guiStuff-class.html#listMove" class="summary-sig-name">listMove</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Move method that executes the current move command in the loaded CSV 
+      file.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="guiStuff-pysrc.html#guiStuff.listMove">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="guiStuff.guiStuff-class.html#loadCsv" class="summary-sig-name">loadCsv</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*args</span>)</span><br />
+      loadCsv allows the user to choose the CSV file from a file dialog.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="guiStuff-pysrc.html#guiStuff.loadCsv">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="guiStuff.guiStuff-class.html#makeCsv" class="summary-sig-name">makeCsv</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*args</span>)</span><br />
+      Instantiates a CreateCsv object to allow user to edit a list and/or 
+      create a csv file.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="guiStuff-pysrc.html#guiStuff.makeCsv">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="manualEntry"></a><span class="summary-sig-name">manualEntry</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">state</span>=<span class="summary-sig-default">True</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="guiStuff-pysrc.html#guiStuff.manualEntry">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="guiStuff.guiStuff-class.html#move" class="summary-sig-name">move</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*args</span>)</span><br />
+      Stage move command method that moves the stages to the manually 
+      entered values present in the text entry fields in the move tab of 
+      the gui.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="guiStuff-pysrc.html#guiStuff.move">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="guiStuff.guiStuff-class.html#moveStages" class="summary-sig-name">moveStages</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Issues move command to stages based on the current tube command 
+      (guiStuff.tubeCurrentCommand).</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="guiStuff-pysrc.html#guiStuff.moveStages">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="moveStagesRelative"></a><span class="summary-sig-name">moveStagesRelative</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Issues the move command to the stages based on the current tube 
+      command (guiStuff.tubeCurrentCommand), zeroPosition and the current 
+      position of the tube Calls the moveCommands.moveAllRelative command 
+      with the serial port, current command, all of the string vars for 
+      progress bars, zero position, current position and a reference to 
+      this GUI</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="guiStuff-pysrc.html#guiStuff.moveStagesRelative">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="moveTabChanged"></a><span class="summary-sig-name">moveTabChanged</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">event</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="guiStuff-pysrc.html#guiStuff.moveTabChanged">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="guiStuff.guiStuff-class.html#next" class="summary-sig-name">next</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Updates the current command to the next command in the list.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="guiStuff-pysrc.html#guiStuff.next">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="guiStuff.guiStuff-class.html#previous" class="summary-sig-name">previous</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Updates the current command to the previous command in the list.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="guiStuff-pysrc.html#guiStuff.previous">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="guiStuff.guiStuff-class.html#quit" class="summary-sig-name">quit</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Exits the program.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="guiStuff-pysrc.html#guiStuff.quit">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="guiStuff.guiStuff-class.html#readCsv" class="summary-sig-name">readCsv</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">readPath</span>)</span><br />
+      readCsv reads a csv file and returns the contents of the csv file in 
+      the form of a list.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="guiStuff-pysrc.html#guiStuff.readCsv">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="guiStuff.guiStuff-class.html#rescan" class="summary-sig-name">rescan</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*args</span>)</span><br />
+      Rescans the available serial ports and updates the serial selection 
+      combobox.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="guiStuff-pysrc.html#guiStuff.rescan">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="resetRotation"></a><span class="summary-sig-name">resetRotation</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="guiStuff-pysrc.html#guiStuff.resetRotation">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="guiStuff.guiStuff-class.html#returnToZero" class="summary-sig-name">returnToZero</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Moves stges back to zero point specified in guiStuff.zeroPoint.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="guiStuff-pysrc.html#guiStuff.returnToZero">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="saveExecutedCommands"></a><span class="summary-sig-name">saveExecutedCommands</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      work in progress</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="guiStuff-pysrc.html#guiStuff.saveExecutedCommands">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="guiStuff.guiStuff-class.html#serialCallBack" class="summary-sig-name">serialCallBack</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*args</span>)</span><br />
+      Handles manual selection of serial ports (combo box in the other 
+      tab).</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="guiStuff-pysrc.html#guiStuff.serialCallBack">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setSettings"></a><span class="summary-sig-name">setSettings</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="guiStuff-pysrc.html#guiStuff.setSettings">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="guiStuff.guiStuff-class.html#setCurrentCommandText" class="summary-sig-name">setCurrentCommandText</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">xTube</span>,
+        <span class="summary-sig-arg">yTube</span>,
+        <span class="summary-sig-arg">zTube</span>,
+        <span class="summary-sig-arg">degTube</span>,
+        <span class="summary-sig-arg">xPlan</span>,
+        <span class="summary-sig-arg">yPlan</span>,
+        <span class="summary-sig-arg">zPlan</span>,
+        <span class="summary-sig-arg">degPlan</span>)</span><br />
+      Sets the current list command text (text that shows the commands in 
+      the loaded list).</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="guiStuff-pysrc.html#guiStuff.setCurrentCommandText">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="guiStuff.guiStuff-class.html#setListIndex" class="summary-sig-name">setListIndex</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">listPosition</span>)</span><br />
+      Sets the list index (which marks the active command in command lists)
+      to the entered parameter if valid.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="guiStuff-pysrc.html#guiStuff.setListIndex">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="guiStuff.guiStuff-class.html#setPlanCurrentCommand" class="summary-sig-name">setPlanCurrentCommand</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">planCommand</span>)</span><br />
+      Sets the current planed CT coordinate move (point plus fiducials) to 
+      the entered parameter.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="guiStuff-pysrc.html#guiStuff.setPlanCurrentCommand">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="guiStuff.guiStuff-class.html#setPlanListCommand" class="summary-sig-name">setPlanListCommand</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">command</span>)</span><br />
+      Adds a command in CT coordinates with associated fiducial points to 
+      the list of commands (self.planListCommand).</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="guiStuff-pysrc.html#guiStuff.setPlanListCommand">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="guiStuff.guiStuff-class.html#setTubeCurrentCommand" class="summary-sig-name">setTubeCurrentCommand</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">moveType</span>,
+        <span class="summary-sig-arg">tubeCommand</span>)</span><br />
+      Sets the current tube command (self.tubeCurrentCommand) to the 
+      entered parameter if it is valid.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="guiStuff-pysrc.html#guiStuff.setTubeCurrentCommand">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setTubeDimension"></a><span class="summary-sig-name">setTubeDimension</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="guiStuff-pysrc.html#guiStuff.setTubeDimension">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setTubeListCommand"></a><span class="summary-sig-name">setTubeListCommand</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">newTubeCommand</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="guiStuff-pysrc.html#guiStuff.setTubeListCommand">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setZero"></a><span class="summary-sig-name">setZero</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="guiStuff-pysrc.html#guiStuff.setZero">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="guiStuff.guiStuff-class.html#setZeroPoint" class="summary-sig-name">setZeroPoint</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      First homes stages and then moves to the zero point identified in the
+      class attribute zeroPoint.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="guiStuff-pysrc.html#guiStuff.setZeroPoint">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="guiStuff.guiStuff-class.html#stop" class="summary-sig-name">stop</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Stops movement of stages.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="guiStuff-pysrc.html#guiStuff.stop">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="guiStuff.guiStuff-class.html#updateCsvInfo" class="summary-sig-name">updateCsvInfo</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      updateCsvInfo updates the csv information in the current command 
+      labels after loading a csv.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="guiStuff-pysrc.html#guiStuff.updateCsvInfo">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="updateCurrentPlan"></a><span class="summary-sig-name">updateCurrentPlan</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      talk to david</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="guiStuff-pysrc.html#guiStuff.updateCurrentPlan">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="updateCurrentPosition"></a><span class="summary-sig-name">updateCurrentPosition</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      talk to david.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="guiStuff-pysrc.html#guiStuff.updateCurrentPosition">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="updateCurrentPositionText"></a><span class="summary-sig-name">updateCurrentPositionText</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Believe is obsolete</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="guiStuff-pysrc.html#guiStuff.updateCurrentPositionText">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="updateDimensionText"></a><span class="summary-sig-name">updateDimensionText</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="guiStuff-pysrc.html#guiStuff.updateDimensionText">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="updateExecutedCommands"></a><span class="summary-sig-name">updateExecutedCommands</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">planCommand</span>,
+        <span class="summary-sig-arg">tubeCommand</span>)</span><br />
+      Work in progress</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="guiStuff-pysrc.html#guiStuff.updateExecutedCommands">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="guiStuff.guiStuff-class.html#updateProgress" class="summary-sig-name">updateProgress</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Updates the progress bar for a move.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="guiStuff-pysrc.html#guiStuff.updateProgress">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="updateZeroPositionText"></a><span class="summary-sig-name">updateZeroPositionText</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="guiStuff-pysrc.html#guiStuff.updateZeroPositionText">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="guiStuff.guiStuff-class.html#writeCsv" class="summary-sig-name">writeCsv</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">csvList</span>)</span><br />
+      Writes the entered parameter list as a csv.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="guiStuff-pysrc.html#guiStuff.writeCsv">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="selectProgressBars"></a><span class="summary-sig-name">selectProgressBars</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="guiStuff-pysrc.html#guiStuff.selectProgressBars">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="guiStuff.guiStuff-class.html#writeList" class="summary-sig-name">writeList</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Writes the contents of the planed commands to a csv file.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="guiStuff-pysrc.html#guiStuff.writeList">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="zeroBars"></a><span class="summary-sig-name">zeroBars</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Sets movement progress bars to zero before a move.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="guiStuff-pysrc.html#guiStuff.zeroBars">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS VARIABLES ==================== -->
+<a name="section-ClassVariables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassVariables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="currentPosition"></a><span class="summary-name">currentPosition</span> = <code title="(0.0, 0.0, 0.0, 180.0)"><code class="variable-group">(</code>0.0<code class="variable-op">, </code>0.0<code class="variable-op">, </code>0.0<code class="variable-op">, </code>180.0<code class="variable-group">)</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="tubeListCommand"></a><span class="summary-name">tubeListCommand</span> = <code title="[['x', 'y', 'z', 'degree']]"><code class="variable-group">[</code><code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">x</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">y</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">z</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">degree</code><code class="variable-quote">'</code><code class="variable-group">]</code><code class="variable-group">]</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="tubeCurrentCommand"></a><span class="summary-name">tubeCurrentCommand</span> = <code title="(0.0, 0.0, 0.0, 0.0)"><code class="variable-group">(</code>0.0<code class="variable-op">, </code>0.0<code class="variable-op">, </code>0.0<code class="variable-op">, </code>0.0<code class="variable-group">)</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="guiStuff.guiStuff-class.html#planListCommand" class="summary-name">planListCommand</a> = <code title="[['x',
+  'y',
+  'degree',
+  '9 o\'clock x',
+  '9 o\'clock y',
+  '6 o\'clock x',
+  '6 o\'clock y',
+  '3 o\'clock x',
+..."><code class="variable-group">[</code><code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">x</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">y</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">degree</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">9 o\'clock x</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">9 o\'</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="planCurrentCommand"></a><span class="summary-name">planCurrentCommand</span> = <code title="[]"><code class="variable-group">[</code><code class="variable-group">]</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="listIndex"></a><span class="summary-name">listIndex</span> = <code title="0">0</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="zeroPosition"></a><span class="summary-name">zeroPosition</span> = <code title="[30.414, 30.407, 11.164, 180.0]"><code class="variable-group">[</code>30.414<code class="variable-op">, </code>30.407<code class="variable-op">, </code>11.164<code class="variable-op">, </code>180.0<code class="variable-group">]</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="defaultZeroPosition"></a><span class="summary-name">defaultZeroPosition</span> = <code title="[30.414, 30.407, 11.164, 180.0]"><code class="variable-group">[</code>30.414<code class="variable-op">, </code>30.407<code class="variable-op">, </code>11.164<code class="variable-op">, </code>180.0<code class="variable-group">]</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="tubeDimension"></a><span class="summary-name">tubeDimension</span> = <code title="[31.75, 116.0]"><code class="variable-group">[</code>31.75<code class="variable-op">, </code>116.0<code class="variable-group">]</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="defaultTubeDimension"></a><span class="summary-name">defaultTubeDimension</span> = <code title="[31.75, 116.0]"><code class="variable-group">[</code>31.75<code class="variable-op">, </code>116.0<code class="variable-group">]</code></code>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="affineTransform"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">affineTransform</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">plan_command</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="guiStuff-pysrc.html#guiStuff.affineTransform">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Converts the CT coordinate of the treatment target to the proper stage
+  movement coordinate in The x-TRAP. Uses the xy cordinates of three 
+  fiducials (9 o'clock, 6 o'clock, 3 o'clock) to find the xy coordinates of
+  the x-TRAP movement. The helical fiducial is transformed to tube 
+  coordinates in order to find the angle of the helical fiducial relative 
+  to the positive x-axis(3 o'clock). The angle determines the z coordinate 
+  of the desired movement. from_pts are 9 o'clock, 6 o'clock, 3 o'clock in 
+  tuples of (x,y) to_pts are 9 o'clock, 6 o'clock, 3 o'clock in tuples of 
+  (x,y) The transform will get the point in the x/y plane, but to move to 
+  that point the stages will have to move the opposite way (i.e. positive x
+  means negative x movement).  That is the reason for the weird target 
+  creation.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>plan_command</code></strong> - Command to be affine transformed into tube coordinates</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="createCsv"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">createCsv</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="guiStuff-pysrc.html#guiStuff.createCsv">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Clears the loaded list and then allows the user to create a completely
+  new command list. CreateCsv is instantiated to make the list much like 
+  self.makeCsv (it actually gets called) but createCsv does not load the 
+  previous made list and instead deletes it.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="home"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">home</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="guiStuff-pysrc.html#guiStuff.home">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Homes all stages to the absolute zero point of the stages (not to 
+  middle of the stages as defined by guiStuff.zeroPoint). See 
+  moveCommands.homeAll for detailed move instructions.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="isValid"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">isValid</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="guiStuff-pysrc.html#guiStuff.isValid">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Checks for valid csv file format. Ignores the first line which should 
+  be column headers.</p>
+  <dl class="fields">
+    <dt>Returns:</dt>
+        <dd>true or false for validity of the contents of a csv file. Checks 
+          if the information has valid numbers.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="isValidRow"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">isValidRow</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">row</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="guiStuff-pysrc.html#guiStuff.isValidRow">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Checks if a single command row is valid. Ensures the command is within
+  bounds of the stages and is actually all numbers.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>row</code></strong> - A single command entry for validity checking</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="isValidRowRelative"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">isValidRowRelative</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">row</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="guiStuff-pysrc.html#guiStuff.isValidRowRelative">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Checks if a single command row is valid. Ensures the command is within
+  bounds of the stages and is actually all numbers.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>row</code></strong> - A single command entry for validity checking</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="listAffineTransform"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">listAffineTransform</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="guiStuff-pysrc.html#guiStuff.listAffineTransform">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>When a list of commands is loaded by loadCsv, the listAffineTransform 
+  is called to transform all commands to tube coordinates and return the 
+  values.</p>
+  <dl class="fields">
+    <dt>Returns:</dt>
+        <dd>list of tube coordinate commands</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="listMove"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">listMove</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="guiStuff-pysrc.html#guiStuff.listMove">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Move method that executes the current move command in the loaded CSV 
+  file. The current command is defined as the command in csvFile that 
+  represents the value in positionNumber. Call back function for 
+  self.positionListMove button</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="loadCsv"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">loadCsv</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">*args</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="guiStuff-pysrc.html#guiStuff.loadCsv">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>loadCsv allows the user to choose the CSV file from a file dialog. If 
+  there is an error in reading the CSV file then a warning box alerts the 
+  user. Problems in loading could be do to empty/no file or the commands 
+  could be out of bounds. Call back function for the &quot;Load CSV&quot; 
+  command in self.menu_file.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="makeCsv"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">makeCsv</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">*args</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="guiStuff-pysrc.html#guiStuff.makeCsv">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Instantiates a CreateCsv object to allow user to edit a list and/or 
+  create a csv file. Call back function for the &quot;Edit list&quot; 
+  command in self.menu_file.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="move"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">move</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">*args</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="guiStuff-pysrc.html#guiStuff.move">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Stage move command method that moves the stages to the manually 
+  entered values present in the text entry fields in the move tab of the 
+  gui. Note no parameters are needed since the commands are extracted from 
+  the users entry. This method is only called by the &quot;move&quot; 
+  button found below the entry fields in the move tab. Depending on the 
+  selected radiobuttons it will either ask for fiducials (a 
+  &quot;PLAN&quot; move) or not (a &quot;TUBE&quot; move). Call back 
+  function for the self.move button.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="moveStages"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">moveStages</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="guiStuff-pysrc.html#guiStuff.moveStages">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Issues move command to stages based on the current tube command 
+  (guiStuff.tubeCurrentCommand). Calls moveCommands.moveAllAbsolute with 
+  the serial connection, current tube command, and StringVar to update the 
+  current position text.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="next"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">next</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="guiStuff-pysrc.html#guiStuff.next">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Updates the current command to the next command in the list. Also, 
+  updates the current list command text. Call back function for the 
+  self.nextButton button.</p>
+  <dl class="fields">
+  </dl>
+<div class="fields">      <p><strong>Note:</strong>
+        Does not execute a move command.
+      </p>
+</div></td></tr></table>
+</div>
+<a name="previous"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">previous</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="guiStuff-pysrc.html#guiStuff.previous">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Updates the current command to the previous command in the list. Also,
+  updates the current list command text. Call back function for the 
+  self.previousButton button.</p>
+  <dl class="fields">
+  </dl>
+<div class="fields">      <p><strong>Note:</strong>
+        Does not execute a move command.
+      </p>
+</div></td></tr></table>
+</div>
+<a name="quit"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">quit</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="guiStuff-pysrc.html#guiStuff.quit">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Exits the program. Called by a menu bar option File-&gt;Quit. However,
+  closes serial port connection before quiting. It is the call back 
+  function for the &quot;Quit&quot; command in self.menu_file.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="readCsv"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">readCsv</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">readPath</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="guiStuff-pysrc.html#guiStuff.readCsv">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>readCsv reads a csv file and returns the contents of the csv file in 
+  the form of a list.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>readPath</code></strong> (String) - full file path of the csv file</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>returns the csv file contents as a list</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="rescan"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">rescan</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">*args</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="guiStuff-pysrc.html#guiStuff.rescan">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Rescans the available serial ports and updates the serial selection 
+  combobox. Call back function for the rescanButton button.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="returnToZero"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">returnToZero</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="guiStuff-pysrc.html#guiStuff.returnToZero">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Moves stges back to zero point specified in guiStuff.zeroPoint. Call 
+  back function for the self.returnToZeroPoint button.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="serialCallBack"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">serialCallBack</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">*args</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="guiStuff-pysrc.html#guiStuff.serialCallBack">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Handles manual selection of serial ports (combo box in the other tab).
+  Merely changing the selection will change the serial port connection. 
+  Call back function for the self.serialComboBox combobox.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="setCurrentCommandText"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">setCurrentCommandText</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">xTube</span>,
+        <span class="sig-arg">yTube</span>,
+        <span class="sig-arg">zTube</span>,
+        <span class="sig-arg">degTube</span>,
+        <span class="sig-arg">xPlan</span>,
+        <span class="sig-arg">yPlan</span>,
+        <span class="sig-arg">zPlan</span>,
+        <span class="sig-arg">degPlan</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="guiStuff-pysrc.html#guiStuff.setCurrentCommandText">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Sets the current list command text (text that shows the commands in 
+  the loaded list). The command in tube coordinates is displayed without 
+  parenthesis and the originally entered ct coordinates are displayed in 
+  parenthesis. The current list command text is displayed in the upper left
+  of the main gui. Parameters are entered tube coordinates first 
+  (x,y,z,rotation) followed by the plan command (ct coordinates). Note only
+  the value of the actual point for the plan (not fiducials) is entered as 
+  a parameter. The plan coordinates of the actual point of interest is 
+  displayed to double check list position for the user.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="setListIndex"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">setListIndex</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">listPosition</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="guiStuff-pysrc.html#guiStuff.setListIndex">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Sets the list index (which marks the active command in command lists) 
+  to the entered parameter if valid.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>listPosition</code></strong> - integer to set as current position in command lists</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="setPlanCurrentCommand"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">setPlanCurrentCommand</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">planCommand</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="guiStuff-pysrc.html#guiStuff.setPlanCurrentCommand">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Sets the current planed CT coordinate move (point plus fiducials) to 
+  the entered parameter.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>planCommand</code></strong> - planed CT coordinate move that has the point of interest and 
+          fiducial points</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="setPlanListCommand"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">setPlanListCommand</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">command</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="guiStuff-pysrc.html#guiStuff.setPlanListCommand">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Adds a command in CT coordinates with associated fiducial points to 
+  the list of commands (self.planListCommand). The method will insert the 
+  command based on the value of the list index (guiStuff.listIndex). The 
+  set method will appropriately append or insert in the middle.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>command</code></strong> - Command in CT coordinates with associated fiducial points</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="setTubeCurrentCommand"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">setTubeCurrentCommand</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">moveType</span>,
+        <span class="sig-arg">tubeCommand</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="guiStuff-pysrc.html#guiStuff.setTubeCurrentCommand">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Sets the current tube command (self.tubeCurrentCommand) to the entered
+  parameter if it is valid.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>moveType</code></strong> - 20 or 21, 20 for absolute move, 21 for relative move</li>
+        <li><strong class="pname"><code>tubeCommand</code></strong> - tube command to be set as the current tube command</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="setZeroPoint"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">setZeroPoint</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="guiStuff-pysrc.html#guiStuff.setZeroPoint">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>First homes stages and then moves to the zero point identified in the 
+  class attribute zeroPoint. Calls moveCommands.SetZeroPoint in a new 
+  thread to execute movement.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="stop"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">stop</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="guiStuff-pysrc.html#guiStuff.stop">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Stops movement of stages. Calls moveCommands.stop which then updates 
+  the position where stages stoped.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="updateCsvInfo"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">updateCsvInfo</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="guiStuff-pysrc.html#guiStuff.updateCsvInfo">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>updateCsvInfo updates the csv information in the current command 
+  labels after loading a csv. If there is not a single command then warning
+  dialog box alerts user. Note the first line in a csv does not count as a 
+  command since it should be the header.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="updateProgress"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">updateProgress</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="guiStuff-pysrc.html#guiStuff.updateProgress">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Updates the progress bar for a move. Peculiarly, it uses the current 
+  position text (bottom left in the main gui) to find the current position 
+  of the text. Based on the current actual position, initial position 
+  (guiStuff.currentPosition), and the command position 
+  (guiStuff.tubeCurrentCommand) it updates the progress bar. The usage of 
+  string processing of text to find the actual position of the stages is 
+  needed since the move commands only update the current position text 
+  while in a move (the text is represented by self.xCurrentVar.get() and so
+  forth).</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="writeCsv"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">writeCsv</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">csvList</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="guiStuff-pysrc.html#guiStuff.writeCsv">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Writes the entered parameter list as a csv. A save file dialog allows 
+  user to choose what to save the file as.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>csvList</code></strong> - List containing commands to be written.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="writeList"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">writeList</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="guiStuff-pysrc.html#guiStuff.writeList">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Writes the contents of the planed commands to a csv file. Users enter 
+  where to save the file through a file dialog. Note, the plan command (in 
+  CT coordinates) is written to the file.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== CLASS VARIABLE DETAILS ==================== -->
+<a name="section-ClassVariableDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Variable Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassVariableDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="planListCommand"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">planListCommand</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">[</code><code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">x</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+  <code class="variable-quote">'</code><code class="variable-string">y</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+  <code class="variable-quote">'</code><code class="variable-string">degree</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+  <code class="variable-quote">'</code><code class="variable-string">9 o\'clock x</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+  <code class="variable-quote">'</code><code class="variable-string">9 o\'clock y</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+  <code class="variable-quote">'</code><code class="variable-string">6 o\'clock x</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+  <code class="variable-quote">'</code><code class="variable-string">6 o\'clock y</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+  <code class="variable-quote">'</code><code class="variable-string">3 o\'clock x</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+<code class="variable-ellipsis">...</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://code.google.com/p/mouse-stage-control-code/">x-TRAP</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Sat Sep 15 23:47:28 2012
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

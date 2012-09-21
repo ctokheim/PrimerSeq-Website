@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>dataManagement</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://code.google.com/p/mouse-stage-control-code/">x-TRAP</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        Module&nbsp;dataManagement
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="dataManagement-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="dataManagement-module.html">Module dataManagement</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno">  1</tt>  <tt class="py-line"><tt class="py-docstring">'''</tt> </tt>
+<a name="L2"></a><tt class="py-lineno">  2</tt>  <tt class="py-line"><tt class="py-docstring">This python file does the data processing for the stages including converting distance in mm or degrees</tt> </tt>
+<a name="L3"></a><tt class="py-lineno">  3</tt>  <tt class="py-line"><tt class="py-docstring">to steps and vice cersa, but also gets the position of the stages using the serialCommands.py file</tt> </tt>
+<a name="L4"></a><tt class="py-lineno">  4</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L5"></a><tt class="py-lineno">  5</tt>  <tt class="py-line"><tt class="py-docstring">@author: David</tt> </tt>
+<a name="L6"></a><tt class="py-lineno">  6</tt>  <tt class="py-line"><tt class="py-docstring">'''</tt> </tt>
+<a name="L7"></a><tt class="py-lineno">  7</tt>  <tt class="py-line"><tt class="py-comment">#custom Library Imports</tt> </tt>
+<a name="L8"></a><tt class="py-lineno">  8</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt id="link-0" class="py-name" targets="Module serialCommands=serialCommands-module.html"><a title="serialCommands" class="py-name" href="#" onclick="return doclink('link-0', 'serialCommands', 'link-0');">serialCommands</a></tt> </tt>
+<a name="L9"></a><tt class="py-lineno">  9</tt>  <tt class="py-line"> </tt>
+<a name="calculateSpeed"></a><div id="calculateSpeed-def"><a name="L10"></a><tt class="py-lineno"> 10</tt> <a class="py-toggle" href="#" id="calculateSpeed-toggle" onclick="return toggle('calculateSpeed');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="dataManagement-module.html#calculateSpeed">calculateSpeed</a><tt class="py-op">(</tt><tt class="py-param">desiredSpeed</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="calculateSpeed-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="calculateSpeed-expanded"><a name="L11"></a><tt class="py-lineno"> 11</tt>  <tt class="py-line">    <tt class="py-docstring">'''</tt> </tt>
+<a name="L12"></a><tt class="py-lineno"> 12</tt>  <tt class="py-line"><tt class="py-docstring">    Calculates the data portion for the speed changing where the desired speed is given in degrees per minute</tt> </tt>
+<a name="L13"></a><tt class="py-lineno"> 13</tt>  <tt class="py-line"><tt class="py-docstring">    </tt> </tt>
+<a name="L14"></a><tt class="py-lineno"> 14</tt>  <tt class="py-line"><tt class="py-docstring">    @param desiredSpeed: The desired speed in degrees per minute</tt> </tt>
+<a name="L15"></a><tt class="py-lineno"> 15</tt>  <tt class="py-line"><tt class="py-docstring">    '''</tt> </tt>
+<a name="L16"></a><tt class="py-lineno"> 16</tt>  <tt class="py-line">    <tt class="py-name">speed_second</tt> <tt class="py-op">=</tt> <tt class="py-name">desiredSpeed</tt><tt class="py-op">/</tt><tt class="py-number">60</tt> <tt class="py-comment">#convert speed from deg/min to deg/s</tt> </tt>
+<a name="L17"></a><tt class="py-lineno"> 17</tt>  <tt class="py-line">    <tt class="py-name">microstepSize</tt> <tt class="py-op">=</tt> <tt class="py-number">0.000234375</tt> <tt class="py-comment">#size of each microstep</tt> </tt>
+<a name="L18"></a><tt class="py-lineno"> 18</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt id="link-1" class="py-name" targets="Class int=int-class.html"><a title="int" class="py-name" href="#" onclick="return doclink('link-1', 'int', 'link-1');">int</a></tt><tt class="py-op">(</tt><tt class="py-name">speed_second</tt> <tt class="py-op">/</tt> <tt class="py-op">(</tt><tt class="py-name">microstepSize</tt> <tt class="py-op">*</tt> <tt class="py-number">9.375</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L19"></a><tt class="py-lineno"> 19</tt>  <tt class="py-line"> </tt>
+<a name="dataToBytes"></a><div id="dataToBytes-def"><a name="L20"></a><tt class="py-lineno"> 20</tt> <a class="py-toggle" href="#" id="dataToBytes-toggle" onclick="return toggle('dataToBytes');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="dataManagement-module.html#dataToBytes">dataToBytes</a><tt class="py-op">(</tt><tt class="py-param">data</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="dataToBytes-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="dataToBytes-expanded"><a name="L21"></a><tt class="py-lineno"> 21</tt>  <tt class="py-line">    <tt class="py-docstring">'''</tt> </tt>
+<a name="L22"></a><tt class="py-lineno"> 22</tt>  <tt class="py-line"><tt class="py-docstring">    converts the data in base 10 to bytes (base 256)</tt> </tt>
+<a name="L23"></a><tt class="py-lineno"> 23</tt>  <tt class="py-line"><tt class="py-docstring">    </tt> </tt>
+<a name="L24"></a><tt class="py-lineno"> 24</tt>  <tt class="py-line"><tt class="py-docstring">    @param data: the data (base 10) being converted to bytes (base 256)</tt> </tt>
+<a name="L25"></a><tt class="py-lineno"> 25</tt>  <tt class="py-line"><tt class="py-docstring">    @return inst: the array containing the bytes that were converted from the input data</tt> </tt>
+<a name="L26"></a><tt class="py-lineno"> 26</tt>  <tt class="py-line"><tt class="py-docstring">    '''</tt> </tt>
+<a name="L27"></a><tt class="py-lineno"> 27</tt>  <tt class="py-line">    <tt class="py-name">inst</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">,</tt><tt class="py-number">0</tt><tt class="py-op">,</tt><tt class="py-number">0</tt><tt class="py-op">,</tt><tt class="py-number">0</tt><tt class="py-op">,</tt><tt class="py-number">0</tt><tt class="py-op">,</tt><tt class="py-number">0</tt><tt class="py-op">]</tt> </tt>
+<a name="L28"></a><tt class="py-lineno"> 28</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt class="py-name">data</tt> <tt class="py-op">&lt;</tt> <tt class="py-number">0</tt><tt class="py-op">:</tt> </tt>
+<a name="L29"></a><tt class="py-lineno"> 29</tt>  <tt class="py-line">        <tt class="py-name">data</tt> <tt class="py-op">=</tt> <tt class="py-number">256</tt><tt class="py-op">**</tt><tt class="py-number">4</tt> <tt class="py-op">+</tt> <tt class="py-name">data</tt> </tt>
+<a name="L30"></a><tt class="py-lineno"> 30</tt>  <tt class="py-line">        <tt class="py-name">inst</tt><tt class="py-op">[</tt><tt class="py-number">5</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">data</tt><tt class="py-op">/</tt><tt class="py-op">(</tt><tt class="py-number">256</tt><tt class="py-op">**</tt><tt class="py-number">3</tt><tt class="py-op">)</tt> </tt>
+<a name="L31"></a><tt class="py-lineno"> 31</tt>  <tt class="py-line">        <tt class="py-name">data</tt> <tt class="py-op">=</tt> <tt class="py-name">data</tt><tt class="py-op">%</tt><tt class="py-op">(</tt><tt class="py-number">256</tt><tt class="py-op">**</tt><tt class="py-number">3</tt><tt class="py-op">)</tt> </tt>
+<a name="L32"></a><tt class="py-lineno"> 32</tt>  <tt class="py-line">        <tt class="py-name">inst</tt><tt class="py-op">[</tt><tt class="py-number">4</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">data</tt><tt class="py-op">/</tt><tt class="py-op">(</tt><tt class="py-number">256</tt><tt class="py-op">**</tt><tt class="py-number">2</tt><tt class="py-op">)</tt> </tt>
+<a name="L33"></a><tt class="py-lineno"> 33</tt>  <tt class="py-line">        <tt class="py-name">data</tt> <tt class="py-op">=</tt> <tt class="py-name">data</tt><tt class="py-op">%</tt><tt class="py-op">(</tt><tt class="py-number">256</tt><tt class="py-op">**</tt><tt class="py-number">2</tt><tt class="py-op">)</tt> </tt>
+<a name="L34"></a><tt class="py-lineno"> 34</tt>  <tt class="py-line">        <tt class="py-name">inst</tt><tt class="py-op">[</tt><tt class="py-number">3</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">data</tt><tt class="py-op">/</tt><tt class="py-number">256</tt> </tt>
+<a name="L35"></a><tt class="py-lineno"> 35</tt>  <tt class="py-line">        <tt class="py-name">data</tt> <tt class="py-op">=</tt> <tt class="py-name">data</tt><tt class="py-op">%</tt><tt class="py-number">256</tt> </tt>
+<a name="L36"></a><tt class="py-lineno"> 36</tt>  <tt class="py-line">        <tt class="py-name">inst</tt><tt class="py-op">[</tt><tt class="py-number">2</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">data</tt> </tt>
+<a name="L37"></a><tt class="py-lineno"> 37</tt>  <tt class="py-line">    <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L38"></a><tt class="py-lineno"> 38</tt>  <tt class="py-line">        <tt class="py-name">inst</tt><tt class="py-op">[</tt><tt class="py-number">5</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">data</tt><tt class="py-op">/</tt><tt class="py-op">(</tt><tt class="py-number">256</tt><tt class="py-op">**</tt><tt class="py-number">3</tt><tt class="py-op">)</tt> </tt>
+<a name="L39"></a><tt class="py-lineno"> 39</tt>  <tt class="py-line">        <tt class="py-name">data</tt> <tt class="py-op">=</tt> <tt class="py-name">data</tt><tt class="py-op">%</tt><tt class="py-op">(</tt><tt class="py-number">256</tt><tt class="py-op">**</tt><tt class="py-number">3</tt><tt class="py-op">)</tt> </tt>
+<a name="L40"></a><tt class="py-lineno"> 40</tt>  <tt class="py-line">        <tt class="py-name">inst</tt><tt class="py-op">[</tt><tt class="py-number">4</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">data</tt><tt class="py-op">/</tt><tt class="py-op">(</tt><tt class="py-number">256</tt><tt class="py-op">**</tt><tt class="py-number">2</tt><tt class="py-op">)</tt> </tt>
+<a name="L41"></a><tt class="py-lineno"> 41</tt>  <tt class="py-line">        <tt class="py-name">data</tt> <tt class="py-op">=</tt> <tt class="py-name">data</tt><tt class="py-op">%</tt><tt class="py-op">(</tt><tt class="py-number">256</tt><tt class="py-op">**</tt><tt class="py-number">2</tt><tt class="py-op">)</tt> </tt>
+<a name="L42"></a><tt class="py-lineno"> 42</tt>  <tt class="py-line">        <tt class="py-name">inst</tt><tt class="py-op">[</tt><tt class="py-number">3</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">data</tt><tt class="py-op">/</tt><tt class="py-number">256</tt> </tt>
+<a name="L43"></a><tt class="py-lineno"> 43</tt>  <tt class="py-line">        <tt class="py-name">data</tt> <tt class="py-op">=</tt> <tt class="py-name">data</tt><tt class="py-op">%</tt><tt class="py-number">256</tt> </tt>
+<a name="L44"></a><tt class="py-lineno"> 44</tt>  <tt class="py-line">        <tt class="py-name">inst</tt><tt class="py-op">[</tt><tt class="py-number">2</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">data</tt> </tt>
+<a name="L45"></a><tt class="py-lineno"> 45</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">inst</tt> </tt>
+</div><a name="L46"></a><tt class="py-lineno"> 46</tt>  <tt class="py-line"> </tt>
+<a name="bytesToData"></a><div id="bytesToData-def"><a name="L47"></a><tt class="py-lineno"> 47</tt> <a class="py-toggle" href="#" id="bytesToData-toggle" onclick="return toggle('bytesToData');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="dataManagement-module.html#bytesToData">bytesToData</a><tt class="py-op">(</tt><tt class="py-param">array</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="bytesToData-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="bytesToData-expanded"><a name="L48"></a><tt class="py-lineno"> 48</tt>  <tt class="py-line">    <tt class="py-docstring">'''</tt> </tt>
+<a name="L49"></a><tt class="py-lineno"> 49</tt>  <tt class="py-line"><tt class="py-docstring">    Converts base 256 information in an array to base 10 information in an integer</tt> </tt>
+<a name="L50"></a><tt class="py-lineno"> 50</tt>  <tt class="py-line"><tt class="py-docstring">    </tt> </tt>
+<a name="L51"></a><tt class="py-lineno"> 51</tt>  <tt class="py-line"><tt class="py-docstring">    @param array: array containing 4-bytes of information to be converted to an integer</tt> </tt>
+<a name="L52"></a><tt class="py-lineno"> 52</tt>  <tt class="py-line"><tt class="py-docstring">    @return data: the base 10 information.  </tt> </tt>
+<a name="L53"></a><tt class="py-lineno"> 53</tt>  <tt class="py-line"><tt class="py-docstring">    '''</tt> </tt>
+<a name="L54"></a><tt class="py-lineno"> 54</tt>  <tt class="py-line">    <tt class="py-name">data</tt> <tt class="py-op">=</tt> <tt class="py-number">256</tt><tt class="py-op">**</tt><tt class="py-number">3</tt><tt class="py-op">*</tt><tt class="py-name">array</tt><tt class="py-op">[</tt><tt class="py-number">5</tt><tt class="py-op">]</tt> <tt class="py-op">+</tt> <tt class="py-number">256</tt><tt class="py-op">**</tt><tt class="py-number">2</tt><tt class="py-op">*</tt><tt class="py-name">array</tt><tt class="py-op">[</tt><tt class="py-number">4</tt><tt class="py-op">]</tt> <tt class="py-op">+</tt> <tt class="py-number">256</tt><tt class="py-op">*</tt><tt class="py-name">array</tt><tt class="py-op">[</tt><tt class="py-number">3</tt><tt class="py-op">]</tt> <tt class="py-op">+</tt> <tt class="py-name">array</tt><tt class="py-op">[</tt><tt class="py-number">2</tt><tt class="py-op">]</tt> </tt>
+<a name="L55"></a><tt class="py-lineno"> 55</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt class="py-name">array</tt><tt class="py-op">[</tt><tt class="py-number">5</tt><tt class="py-op">]</tt> <tt class="py-op">&gt;</tt> <tt class="py-number">127</tt><tt class="py-op">:</tt> </tt>
+<a name="L56"></a><tt class="py-lineno"> 56</tt>  <tt class="py-line">        <tt class="py-name">data</tt> <tt class="py-op">=</tt> <tt class="py-name">data</tt> <tt class="py-op">-</tt> <tt class="py-number">256</tt><tt class="py-op">**</tt><tt class="py-number">4</tt><tt class="py-op">;</tt> </tt>
+<a name="L57"></a><tt class="py-lineno"> 57</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">data</tt> </tt>
+</div><a name="L58"></a><tt class="py-lineno"> 58</tt>  <tt class="py-line"> </tt>
+<a name="calcSteps"></a><div id="calcSteps-def"><a name="L59"></a><tt class="py-lineno"> 59</tt> <a class="py-toggle" href="#" id="calcSteps-toggle" onclick="return toggle('calcSteps');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="dataManagement-module.html#calcSteps">calcSteps</a><tt class="py-op">(</tt><tt class="py-param">dev</tt><tt class="py-op">,</tt> <tt class="py-param">magnitude</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="calcSteps-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="calcSteps-expanded"><a name="L60"></a><tt class="py-lineno"> 60</tt>  <tt class="py-line">    <tt class="py-docstring">'''</tt> </tt>
+<a name="L61"></a><tt class="py-lineno"> 61</tt>  <tt class="py-line"><tt class="py-docstring">    Calculates the number of microsteps for the device (dev) to move the magnitude passed</tt> </tt>
+<a name="L62"></a><tt class="py-lineno"> 62</tt>  <tt class="py-line"><tt class="py-docstring">    into the method</tt> </tt>
+<a name="L63"></a><tt class="py-lineno"> 63</tt>  <tt class="py-line"><tt class="py-docstring">    </tt> </tt>
+<a name="L64"></a><tt class="py-lineno"> 64</tt>  <tt class="py-line"><tt class="py-docstring">    @param dev: the device number (1-4) standing for the Z, rotary, X, and Y stage</tt> </tt>
+<a name="L65"></a><tt class="py-lineno"> 65</tt>  <tt class="py-line"><tt class="py-docstring">    @param magnitude: the distance in mm or degrees of the movement</tt> </tt>
+<a name="L66"></a><tt class="py-lineno"> 66</tt>  <tt class="py-line"><tt class="py-docstring">    @return data: the number of microsteps that the device needs to move to have the stage move the desired magnitude</tt> </tt>
+<a name="L67"></a><tt class="py-lineno"> 67</tt>  <tt class="py-line"><tt class="py-docstring">    '''</tt> </tt>
+<a name="L68"></a><tt class="py-lineno"> 68</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt class="py-name">dev</tt> <tt class="py-op">==</tt> <tt class="py-number">1</tt><tt class="py-op">:</tt> </tt>
+<a name="L69"></a><tt class="py-lineno"> 69</tt>  <tt class="py-line">        <tt class="py-name">factor</tt> <tt class="py-op">=</tt> <tt class="py-number">1.27</tt> </tt>
+<a name="L70"></a><tt class="py-lineno"> 70</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt class="py-name">dev</tt> <tt class="py-op">==</tt> <tt class="py-number">2</tt><tt class="py-op">:</tt> </tt>
+<a name="L71"></a><tt class="py-lineno"> 71</tt>  <tt class="py-line">        <tt class="py-name">factor</tt> <tt class="py-op">=</tt> <tt class="py-number">3.0</tt> </tt>
+<a name="L72"></a><tt class="py-lineno"> 72</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt class="py-name">dev</tt> <tt class="py-op">==</tt> <tt class="py-number">3</tt><tt class="py-op">:</tt> </tt>
+<a name="L73"></a><tt class="py-lineno"> 73</tt>  <tt class="py-line">        <tt class="py-name">factor</tt> <tt class="py-op">=</tt> <tt class="py-number">0.6096</tt><tt class="py-op">;</tt> </tt>
+<a name="L74"></a><tt class="py-lineno"> 74</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt class="py-name">dev</tt> <tt class="py-op">==</tt> <tt class="py-number">4</tt><tt class="py-op">:</tt> </tt>
+<a name="L75"></a><tt class="py-lineno"> 75</tt>  <tt class="py-line">        <tt class="py-name">factor</tt> <tt class="py-op">=</tt> <tt class="py-number">0.6096</tt><tt class="py-op">;</tt> </tt>
+<a name="L76"></a><tt class="py-lineno"> 76</tt>  <tt class="py-line">    <tt class="py-name">data</tt> <tt class="py-op">=</tt> <tt id="link-2" class="py-name"><a title="int" class="py-name" href="#" onclick="return doclink('link-2', 'int', 'link-1');">int</a></tt><tt class="py-op">(</tt><tt class="py-name">magnitude</tt><tt class="py-op">*</tt><tt class="py-number">200.0</tt><tt class="py-op">/</tt><tt class="py-name">factor</tt><tt class="py-op">/</tt><tt class="py-op">(</tt><tt class="py-number">1</tt><tt class="py-op">/</tt><tt class="py-number">64.0</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L77"></a><tt class="py-lineno"> 77</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">data</tt> </tt>
+</div><a name="L78"></a><tt class="py-lineno"> 78</tt>  <tt class="py-line"> </tt>
+<a name="calcDistance"></a><div id="calcDistance-def"><a name="L79"></a><tt class="py-lineno"> 79</tt> <a class="py-toggle" href="#" id="calcDistance-toggle" onclick="return toggle('calcDistance');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="dataManagement-module.html#calcDistance">calcDistance</a><tt class="py-op">(</tt><tt class="py-param">ser</tt><tt class="py-op">,</tt> <tt class="py-param">dev</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="calcDistance-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="calcDistance-expanded"><a name="L80"></a><tt class="py-lineno"> 80</tt>  <tt class="py-line">    <tt class="py-docstring">'''</tt> </tt>
+<a name="L81"></a><tt class="py-lineno"> 81</tt>  <tt class="py-line"><tt class="py-docstring">    Calculates the distance that the stage is from the home position</tt> </tt>
+<a name="L82"></a><tt class="py-lineno"> 82</tt>  <tt class="py-line"><tt class="py-docstring">    </tt> </tt>
+<a name="L83"></a><tt class="py-lineno"> 83</tt>  <tt class="py-line"><tt class="py-docstring">    @param ser: serial port that all the stages are connected to</tt> </tt>
+<a name="L84"></a><tt class="py-lineno"> 84</tt>  <tt class="py-line"><tt class="py-docstring">    @param dev: the device number (1-4) standing for the Z, rotary, X, and Y stage</tt> </tt>
+<a name="L85"></a><tt class="py-lineno"> 85</tt>  <tt class="py-line"><tt class="py-docstring">    @return [distance, unit]: connected to the distance moved and the unit of the stage (mm or degrees)</tt> </tt>
+<a name="L86"></a><tt class="py-lineno"> 86</tt>  <tt class="py-line"><tt class="py-docstring">    '''</tt> </tt>
+<a name="L87"></a><tt class="py-lineno"> 87</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt class="py-name">dev</tt> <tt class="py-op">==</tt> <tt class="py-number">1</tt><tt class="py-op">:</tt> </tt>
+<a name="L88"></a><tt class="py-lineno"> 88</tt>  <tt class="py-line">        <tt class="py-name">factor</tt> <tt class="py-op">=</tt> <tt class="py-number">1.27</tt> </tt>
+<a name="L89"></a><tt class="py-lineno"> 89</tt>  <tt class="py-line">        <tt class="py-name">unit</tt> <tt class="py-op">=</tt> <tt class="py-string">"mm"</tt> </tt>
+<a name="L90"></a><tt class="py-lineno"> 90</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt class="py-name">dev</tt> <tt class="py-op">==</tt> <tt class="py-number">2</tt><tt class="py-op">:</tt> </tt>
+<a name="L91"></a><tt class="py-lineno"> 91</tt>  <tt class="py-line">        <tt class="py-name">factor</tt> <tt class="py-op">=</tt> <tt class="py-number">3.0</tt> </tt>
+<a name="L92"></a><tt class="py-lineno"> 92</tt>  <tt class="py-line">        <tt class="py-name">unit</tt> <tt class="py-op">=</tt> <tt class="py-string">"degrees"</tt> </tt>
+<a name="L93"></a><tt class="py-lineno"> 93</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt class="py-name">dev</tt> <tt class="py-op">==</tt> <tt class="py-number">3</tt><tt class="py-op">:</tt> </tt>
+<a name="L94"></a><tt class="py-lineno"> 94</tt>  <tt class="py-line">        <tt class="py-name">factor</tt> <tt class="py-op">=</tt> <tt class="py-number">0.6096</tt> </tt>
+<a name="L95"></a><tt class="py-lineno"> 95</tt>  <tt class="py-line">        <tt class="py-name">unit</tt> <tt class="py-op">=</tt> <tt class="py-string">"mm"</tt> </tt>
+<a name="L96"></a><tt class="py-lineno"> 96</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt class="py-name">dev</tt> <tt class="py-op">==</tt> <tt class="py-number">4</tt><tt class="py-op">:</tt> </tt>
+<a name="L97"></a><tt class="py-lineno"> 97</tt>  <tt class="py-line">        <tt class="py-name">factor</tt> <tt class="py-op">=</tt> <tt class="py-number">0.6096</tt> </tt>
+<a name="L98"></a><tt class="py-lineno"> 98</tt>  <tt class="py-line">        <tt class="py-name">unit</tt> <tt class="py-op">=</tt> <tt class="py-string">"mm"</tt> </tt>
+<a name="L99"></a><tt class="py-lineno"> 99</tt>  <tt class="py-line">    <tt id="link-3" class="py-name" targets="Variable guiStuff.guiStuff.currentPosition=guiStuff.guiStuff-class.html#currentPosition"><a title="guiStuff.guiStuff.currentPosition" class="py-name" href="#" onclick="return doclink('link-3', 'currentPosition', 'link-3');">currentPosition</a></tt> <tt class="py-op">=</tt> <tt id="link-4" class="py-name" targets="Function dataManagement.bytesToData()=dataManagement-module.html#bytesToData"><a title="dataManagement.bytesToData" class="py-name" href="#" onclick="return doclink('link-4', 'bytesToData', 'link-4');">bytesToData</a></tt><tt class="py-op">(</tt><tt id="link-5" class="py-name"><a title="serialCommands" class="py-name" href="#" onclick="return doclink('link-5', 'serialCommands', 'link-0');">serialCommands</a></tt><tt class="py-op">.</tt><tt id="link-6" class="py-name" targets="Function serialCommands.receive()=serialCommands-module.html#receive"><a title="serialCommands.receive" class="py-name" href="#" onclick="return doclink('link-6', 'receive', 'link-6');">receive</a></tt><tt class="py-op">(</tt><tt class="py-name">ser</tt><tt class="py-op">,</tt> <tt class="py-name">dev</tt><tt class="py-op">,</tt> <tt class="py-number">60</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-comment">#gets the current position data packet</tt> </tt>
+<a name="L100"></a><tt class="py-lineno">100</tt>  <tt class="py-line">    <tt class="py-name">distance</tt> <tt class="py-op">=</tt> <tt id="link-7" class="py-name"><a title="int" class="py-name" href="#" onclick="return doclink('link-7', 'int', 'link-1');">int</a></tt><tt class="py-op">(</tt><tt id="link-8" class="py-name"><a title="guiStuff.guiStuff.currentPosition" class="py-name" href="#" onclick="return doclink('link-8', 'currentPosition', 'link-3');">currentPosition</a></tt><tt class="py-op">)</tt><tt class="py-comment">#converts the number of steps to a rounded value</tt> </tt>
+<a name="L101"></a><tt class="py-lineno">101</tt>  <tt class="py-line">    <tt class="py-name">distance</tt> <tt class="py-op">=</tt> <tt class="py-name">distance</tt><tt class="py-op">*</tt><tt class="py-op">(</tt><tt class="py-number">1</tt><tt class="py-op">/</tt><tt class="py-number">64.0</tt><tt class="py-op">)</tt><tt class="py-op">*</tt><tt class="py-name">factor</tt><tt class="py-op">/</tt><tt class="py-number">200.0</tt><tt class="py-comment">#converts the integer to the distance for the specific stage</tt> </tt>
+<a name="L102"></a><tt class="py-lineno">102</tt>  <tt class="py-line">    <tt class="py-name">distance</tt> <tt class="py-op">=</tt> <tt class="py-name">round</tt><tt class="py-op">(</tt><tt class="py-name">distance</tt><tt class="py-op">,</tt><tt class="py-number">4</tt><tt class="py-op">)</tt><tt class="py-comment">#rounds the distance to 4 decimal places</tt> </tt>
+<a name="L103"></a><tt class="py-lineno">103</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-op">[</tt><tt class="py-name">distance</tt><tt class="py-op">,</tt> <tt class="py-name">unit</tt><tt class="py-op">]</tt><tt class="py-comment">#returns an array of the distance and string for units</tt> </tt>
+</div><a name="L104"></a><tt class="py-lineno">104</tt>  <tt class="py-line"> </tt>
+<a name="getOnePosition"></a><div id="getOnePosition-def"><a name="L105"></a><tt class="py-lineno">105</tt> <a class="py-toggle" href="#" id="getOnePosition-toggle" onclick="return toggle('getOnePosition');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="dataManagement-module.html#getOnePosition">getOnePosition</a><tt class="py-op">(</tt><tt class="py-param">ser</tt><tt class="py-op">,</tt> <tt class="py-param">dev</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="getOnePosition-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="getOnePosition-expanded"><a name="L106"></a><tt class="py-lineno">106</tt>  <tt class="py-line">    <tt class="py-docstring">'''</tt> </tt>
+<a name="L107"></a><tt class="py-lineno">107</tt>  <tt class="py-line"><tt class="py-docstring">    returns the position of the desired device</tt> </tt>
+<a name="L108"></a><tt class="py-lineno">108</tt>  <tt class="py-line"><tt class="py-docstring">    </tt> </tt>
+<a name="L109"></a><tt class="py-lineno">109</tt>  <tt class="py-line"><tt class="py-docstring">    @param ser: serial port that all the stages are connected to</tt> </tt>
+<a name="L110"></a><tt class="py-lineno">110</tt>  <tt class="py-line"><tt class="py-docstring">    @param dev: the device number (1-4) standing for the Z, rotary, X, and Y stage</tt> </tt>
+<a name="L111"></a><tt class="py-lineno">111</tt>  <tt class="py-line"><tt class="py-docstring">    @return position: position of stage number dev</tt> </tt>
+<a name="L112"></a><tt class="py-lineno">112</tt>  <tt class="py-line"><tt class="py-docstring">    '''</tt> </tt>
+<a name="L113"></a><tt class="py-lineno">113</tt>  <tt class="py-line">    <tt class="py-name">position</tt> <tt class="py-op">=</tt> <tt id="link-9" class="py-name" targets="Function dataManagement.calcDistance()=dataManagement-module.html#calcDistance"><a title="dataManagement.calcDistance" class="py-name" href="#" onclick="return doclink('link-9', 'calcDistance', 'link-9');">calcDistance</a></tt><tt class="py-op">(</tt><tt class="py-name">ser</tt><tt class="py-op">,</tt> <tt class="py-name">dev</tt><tt class="py-op">)</tt><tt class="py-comment">#gets the position of a specified stage</tt> </tt>
+<a name="L114"></a><tt class="py-lineno">114</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">position</tt> </tt>
+</div><a name="L115"></a><tt class="py-lineno">115</tt>  <tt class="py-line"> </tt>
+<a name="getAllPositions"></a><div id="getAllPositions-def"><a name="L116"></a><tt class="py-lineno">116</tt> <a class="py-toggle" href="#" id="getAllPositions-toggle" onclick="return toggle('getAllPositions');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="dataManagement-module.html#getAllPositions">getAllPositions</a><tt class="py-op">(</tt><tt class="py-param">ser</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="getAllPositions-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="getAllPositions-expanded"><a name="L117"></a><tt class="py-lineno">117</tt>  <tt class="py-line">    <tt class="py-docstring">'''</tt> </tt>
+<a name="L118"></a><tt class="py-lineno">118</tt>  <tt class="py-line"><tt class="py-docstring">    returns the position of all stages</tt> </tt>
+<a name="L119"></a><tt class="py-lineno">119</tt>  <tt class="py-line"><tt class="py-docstring">    </tt> </tt>
+<a name="L120"></a><tt class="py-lineno">120</tt>  <tt class="py-line"><tt class="py-docstring">    @param ser: serial port that all the stages are connected to</tt> </tt>
+<a name="L121"></a><tt class="py-lineno">121</tt>  <tt class="py-line"><tt class="py-docstring">    @return [position1, position2, position3, position4]: the position of the 4 stages</tt> </tt>
+<a name="L122"></a><tt class="py-lineno">122</tt>  <tt class="py-line"><tt class="py-docstring">    '''</tt> </tt>
+<a name="L123"></a><tt class="py-lineno">123</tt>  <tt class="py-line">    <tt class="py-name">position1</tt> <tt class="py-op">=</tt> <tt id="link-10" class="py-name" targets="Function dataManagement.getOnePosition()=dataManagement-module.html#getOnePosition"><a title="dataManagement.getOnePosition" class="py-name" href="#" onclick="return doclink('link-10', 'getOnePosition', 'link-10');">getOnePosition</a></tt><tt class="py-op">(</tt><tt class="py-name">ser</tt><tt class="py-op">,</tt> <tt class="py-number">1</tt><tt class="py-op">)</tt> </tt>
+<a name="L124"></a><tt class="py-lineno">124</tt>  <tt class="py-line">    <tt class="py-name">position2</tt> <tt class="py-op">=</tt> <tt id="link-11" class="py-name"><a title="dataManagement.getOnePosition" class="py-name" href="#" onclick="return doclink('link-11', 'getOnePosition', 'link-10');">getOnePosition</a></tt><tt class="py-op">(</tt><tt class="py-name">ser</tt><tt class="py-op">,</tt> <tt class="py-number">2</tt><tt class="py-op">)</tt> </tt>
+<a name="L125"></a><tt class="py-lineno">125</tt>  <tt class="py-line">    <tt class="py-name">position3</tt> <tt class="py-op">=</tt> <tt id="link-12" class="py-name"><a title="dataManagement.getOnePosition" class="py-name" href="#" onclick="return doclink('link-12', 'getOnePosition', 'link-10');">getOnePosition</a></tt><tt class="py-op">(</tt><tt class="py-name">ser</tt><tt class="py-op">,</tt> <tt class="py-number">3</tt><tt class="py-op">)</tt> </tt>
+<a name="L126"></a><tt class="py-lineno">126</tt>  <tt class="py-line">    <tt class="py-name">position4</tt> <tt class="py-op">=</tt> <tt id="link-13" class="py-name"><a title="dataManagement.getOnePosition" class="py-name" href="#" onclick="return doclink('link-13', 'getOnePosition', 'link-10');">getOnePosition</a></tt><tt class="py-op">(</tt><tt class="py-name">ser</tt><tt class="py-op">,</tt> <tt class="py-number">4</tt><tt class="py-op">)</tt> </tt>
+<a name="L127"></a><tt class="py-lineno">127</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-op">[</tt><tt class="py-name">position1</tt><tt class="py-op">,</tt> <tt class="py-name">position2</tt><tt class="py-op">,</tt> <tt class="py-name">position3</tt><tt class="py-op">,</tt> <tt class="py-name">position4</tt><tt class="py-op">]</tt> </tt>
+</div><a name="L128"></a><tt class="py-lineno">128</tt>  <tt class="py-line"> </tt>
+<a name="setCurrentPositionLabel"></a><div id="setCurrentPositionLabel-def"><a name="L129"></a><tt class="py-lineno">129</tt> <a class="py-toggle" href="#" id="setCurrentPositionLabel-toggle" onclick="return toggle('setCurrentPositionLabel');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="dataManagement-module.html#setCurrentPositionLabel">setCurrentPositionLabel</a><tt class="py-op">(</tt><tt class="py-param">ser</tt><tt class="py-op">,</tt> <tt class="py-param">stage1Pos</tt><tt class="py-op">,</tt> <tt class="py-param">stage2Pos</tt><tt class="py-op">,</tt> <tt class="py-param">stage3Pos</tt><tt class="py-op">,</tt> <tt class="py-param">stage4Pos</tt><tt class="py-op">,</tt> <tt class="py-param">zeroPosition</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="setCurrentPositionLabel-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="setCurrentPositionLabel-expanded"><a name="L130"></a><tt class="py-lineno">130</tt>  <tt class="py-line">    <tt class="py-docstring">'''</tt> </tt>
+<a name="L131"></a><tt class="py-lineno">131</tt>  <tt class="py-line"><tt class="py-docstring">    Sets the current position label of all stages</tt> </tt>
+<a name="L132"></a><tt class="py-lineno">132</tt>  <tt class="py-line"><tt class="py-docstring">    </tt> </tt>
+<a name="L133"></a><tt class="py-lineno">133</tt>  <tt class="py-line"><tt class="py-docstring">    @param ser: serial port that all the stages are connected to</tt> </tt>
+<a name="L134"></a><tt class="py-lineno">134</tt>  <tt class="py-line"><tt class="py-docstring">    @param stage1Pos: Label connected to stage1 in the main gui</tt> </tt>
+<a name="L135"></a><tt class="py-lineno">135</tt>  <tt class="py-line"><tt class="py-docstring">    @param stage2Pos: Label connected to stage2 in the main gui</tt> </tt>
+<a name="L136"></a><tt class="py-lineno">136</tt>  <tt class="py-line"><tt class="py-docstring">    @param stage3Pos: Label connected to stage3 in the main gui</tt> </tt>
+<a name="L137"></a><tt class="py-lineno">137</tt>  <tt class="py-line"><tt class="py-docstring">    @param stage4Pos: Label connected to stage4 in the main gui</tt> </tt>
+<a name="L138"></a><tt class="py-lineno">138</tt>  <tt class="py-line"><tt class="py-docstring">    @param zeroPosition: the pre-set zeroPosition of the whole system</tt> </tt>
+<a name="L139"></a><tt class="py-lineno">139</tt>  <tt class="py-line"><tt class="py-docstring">    '''</tt> </tt>
+<a name="L140"></a><tt class="py-lineno">140</tt>  <tt class="py-line">    <tt class="py-op">[</tt><tt class="py-name">pos1</tt><tt class="py-op">,</tt> <tt class="py-name">pos2</tt><tt class="py-op">,</tt> <tt class="py-name">pos3</tt><tt class="py-op">,</tt> <tt class="py-name">pos4</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt id="link-14" class="py-name" targets="Function dataManagement.getAllPositions()=dataManagement-module.html#getAllPositions"><a title="dataManagement.getAllPositions" class="py-name" href="#" onclick="return doclink('link-14', 'getAllPositions', 'link-14');">getAllPositions</a></tt><tt class="py-op">(</tt><tt class="py-name">ser</tt><tt class="py-op">)</tt> </tt>
+<a name="L141"></a><tt class="py-lineno">141</tt>  <tt class="py-line">    <tt class="py-name">s1</tt> <tt class="py-op">=</tt> <tt class="py-name">pos1</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">-</tt><tt id="link-15" class="py-name" targets="Variable guiStuff.guiStuff.zeroPosition=guiStuff.guiStuff-class.html#zeroPosition"><a title="guiStuff.guiStuff.zeroPosition" class="py-name" href="#" onclick="return doclink('link-15', 'zeroPosition', 'link-15');">zeroPosition</a></tt><tt class="py-op">[</tt><tt class="py-number">2</tt><tt class="py-op">]</tt> </tt>
+<a name="L142"></a><tt class="py-lineno">142</tt>  <tt class="py-line">    <tt class="py-name">s2</tt> <tt class="py-op">=</tt> <tt class="py-name">pos2</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">-</tt><tt id="link-16" class="py-name"><a title="guiStuff.guiStuff.zeroPosition" class="py-name" href="#" onclick="return doclink('link-16', 'zeroPosition', 'link-15');">zeroPosition</a></tt><tt class="py-op">[</tt><tt class="py-number">3</tt><tt class="py-op">]</tt> </tt>
+<a name="L143"></a><tt class="py-lineno">143</tt>  <tt class="py-line">    <tt class="py-name">s3</tt> <tt class="py-op">=</tt> <tt class="py-name">pos3</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">-</tt><tt id="link-17" class="py-name"><a title="guiStuff.guiStuff.zeroPosition" class="py-name" href="#" onclick="return doclink('link-17', 'zeroPosition', 'link-15');">zeroPosition</a></tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt> </tt>
+<a name="L144"></a><tt class="py-lineno">144</tt>  <tt class="py-line">    <tt class="py-name">s4</tt> <tt class="py-op">=</tt> <tt class="py-name">pos4</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">-</tt><tt id="link-18" class="py-name"><a title="guiStuff.guiStuff.zeroPosition" class="py-name" href="#" onclick="return doclink('link-18', 'zeroPosition', 'link-15');">zeroPosition</a></tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt> </tt>
+<a name="L145"></a><tt class="py-lineno">145</tt>  <tt class="py-line">    <tt class="py-name">stage1Pos</tt><tt class="py-op">.</tt><tt class="py-name">set</tt><tt class="py-op">(</tt><tt class="py-string">"%.3f mm"</tt> <tt class="py-op">%</tt> <tt class="py-name">s1</tt><tt class="py-op">)</tt> </tt>
+<a name="L146"></a><tt class="py-lineno">146</tt>  <tt class="py-line">    <tt class="py-name">stage2Pos</tt><tt class="py-op">.</tt><tt class="py-name">set</tt><tt class="py-op">(</tt><tt class="py-string">"%.3f %s"</tt> <tt class="py-op">%</tt> <tt class="py-op">(</tt><tt class="py-name">s2</tt><tt class="py-op">,</tt> <tt class="py-name">unichr</tt><tt class="py-op">(</tt><tt class="py-number">176</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L147"></a><tt class="py-lineno">147</tt>  <tt class="py-line">    <tt class="py-name">stage3Pos</tt><tt class="py-op">.</tt><tt class="py-name">set</tt><tt class="py-op">(</tt><tt class="py-string">"%.3f mm"</tt> <tt class="py-op">%</tt> <tt class="py-name">s3</tt><tt class="py-op">)</tt> </tt>
+<a name="L148"></a><tt class="py-lineno">148</tt>  <tt class="py-line">    <tt class="py-name">stage4Pos</tt><tt class="py-op">.</tt><tt class="py-name">set</tt><tt class="py-op">(</tt><tt class="py-string">"%.3f mm"</tt> <tt class="py-op">%</tt> <tt class="py-name">s4</tt><tt class="py-op">)</tt> </tt>
+<a name="L149"></a><tt class="py-lineno">149</tt>  <tt class="py-line">    <tt class="py-comment">#function to update positions with current position in the GUI code</tt> </tt>
+<a name="L150"></a><tt class="py-lineno">150</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> </tt>
+</div><a name="L151"></a><tt class="py-lineno">151</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://code.google.com/p/mouse-stage-control-code/">x-TRAP</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Sat Sep 15 23:47:28 2012
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

@@ -1,46 +1,20 @@
 ---
 layout: page
-title: Hello World!
-tagline: Supporting tagline
+title: Hello <span style="text-decoration:line-through;">World!</span>
+tagline: "{insert code here}" 
 ---
 {% include JB/setup %}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc et sapien tellus, quis tincidunt nulla. Sed dolor lectus, egestas at placerat id, viverra non augue. Etiam ante orci, dictum at imperdiet sed, tristique ac est. Morbi porta nunc mi. Vivamus elementum urna in velit faucibus vel condimentum libero laoreet. Duis scelerisque mauris nec erat porta vehicula. Nunc risus ante, iaculis ac ullamcorper in, rhoncus sed quam. Vivamus metus magna, tempor nec porta eu, auctor sit amet leo. Vestibulum ac elit nisi.
 
-Read [Jekyll Quick Start](http://jekyllbootstrap.com/usage/jekyll-quick-start.html)
+## Projects
 
-Complete usage and documentation available at: [Jekyll Bootstrap](http://jekyllbootstrap.com)
+Click [here](projects/x-trap.html) for information about x-TRAP
 
-## Update Author Attributes
+## Code
 
-In `_config.yml` remember to specify your own data:
-    
-    title : My Blog =)
-    
-    author :
-      name : Name Lastname
-      email : blah@email.test
-      github : username
-      twitter : username
-
-The theme should reference these variables whenever needed.
-    
-## Sample Posts
-
-This blog contains sample posts which help stage pages and blog data.
-When you don't need the samples anymore just delete the `_posts/core-samples` folder.
-
-    $ rm -rf _posts/core-samples
-
-Here's a sample "posts list".
-
-<ul class="posts">
-  {% for post in site.posts %}
-    <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></li>
-  {% endfor %}
-</ul>
+All things code can be found [here](code)
 
 ## To-Do
 
-This theme is still unfinished. If you'd like to be added as a contributor, [please fork](http://github.com/plusjade/jekyll-bootstrap)!
-We need to clean up the themes, make theme usage guides with theme-specific markup examples.
-
+Add vim, tmux, git, bash, samtools, tophat, and cufflinks snippets/tricks. Maybe add information on x-TRAP and literature review.
 

@@ -1,0 +1,816 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>moveCommands</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://code.google.com/p/mouse-stage-control-code/">x-TRAP</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        Module&nbsp;moveCommands
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="moveCommands-module.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== MODULE DESCRIPTION ==================== -->
+<h1 class="epydoc">Module moveCommands</h1><p class="nomargin-top"><span class="codelink"><a href="moveCommands-pysrc.html">source&nbsp;code</a></span></p>
+<p>The moveCommands.py file contains all of the methods and functions 
+  that are used to control the zaber stages that make up the x-TRAP 
+  device.</p>
+
+<hr />
+<div class="fields">      <p><strong>Note:</strong>
+        This set of functions requires the stages to be in the 
+        configuration Z, Rotation, X, Y
+      </p>
+      <p><strong>Author:</strong>
+        David Dellsperger
+      </p>
+</div><!-- ==================== FUNCTIONS ==================== -->
+<a name="section-Functions"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Functions</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Functions"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="moveCommands-module.html#stop" class="summary-sig-name">stop</a>(<span class="summary-sig-arg">ser</span>,
+        <span class="summary-sig-arg">s1</span>,
+        <span class="summary-sig-arg">s2</span>,
+        <span class="summary-sig-arg">s3</span>,
+        <span class="summary-sig-arg">s4</span>,
+        <span class="summary-sig-arg">zeroPosition</span>,
+        <span class="summary-sig-arg">gui</span>)</span><br />
+      Sends the command to all stages to stop movement, should only be used
+      as an emergency stop function as it causes other problems with the 
+      stages after a stop command is sent</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="moveCommands-pysrc.html#stop">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="moveCommands-module.html#moveAllAbsolute" class="summary-sig-name">moveAllAbsolute</a>(<span class="summary-sig-arg">ser</span>,
+        <span class="summary-sig-arg">mag1</span>,
+        <span class="summary-sig-arg">mag2</span>,
+        <span class="summary-sig-arg">mag3</span>,
+        <span class="summary-sig-arg">mag4</span>,
+        <span class="summary-sig-arg">s1</span>,
+        <span class="summary-sig-arg">s2</span>,
+        <span class="summary-sig-arg">s3</span>,
+        <span class="summary-sig-arg">s4</span>,
+        <span class="summary-sig-arg">zeroPosition</span>,
+        <span class="summary-sig-arg">gui</span>)</span><br />
+      checks for valid move, then proceeds with the move based on the 
+      information sent in mag1, mag2, mag3, mag4 are the moves for the 
+      stages z, rotation, x, y in order s1, s2, s3, s4 are the StringVars 
+      that will be used to return the current stage position to the loading
+      meters</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="moveCommands-pysrc.html#moveAllAbsolute">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="moveCommands-module.html#moveAllRelative" class="summary-sig-name">moveAllRelative</a>(<span class="summary-sig-arg">ser</span>,
+        <span class="summary-sig-arg">mag1</span>,
+        <span class="summary-sig-arg">mag2</span>,
+        <span class="summary-sig-arg">mag3</span>,
+        <span class="summary-sig-arg">mag4</span>,
+        <span class="summary-sig-arg">s1</span>,
+        <span class="summary-sig-arg">s2</span>,
+        <span class="summary-sig-arg">s3</span>,
+        <span class="summary-sig-arg">s4</span>,
+        <span class="summary-sig-arg">zeroPosition</span>,
+        <span class="summary-sig-arg">currentPosition</span>,
+        <span class="summary-sig-arg">gui</span>)</span><br />
+      checks for valid move, then proceeds with the move based on the 
+      information sent in mag1, mag2, mag3, mag4 are the moves for the 
+      stages z, rotation, x, y in order s1, s2, s3, s4 are the StringVars 
+      that will be used to return the current stage position to the loading
+      progress bars.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="moveCommands-pysrc.html#moveAllRelative">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="moveCommands-module.html#moveOne" class="summary-sig-name">moveOne</a>(<span class="summary-sig-arg">ser</span>,
+        <span class="summary-sig-arg">dev</span>,
+        <span class="summary-sig-arg">mag</span>,
+        <span class="summary-sig-arg">cmd</span>)</span><br />
+      This is the call to move one stage based on the magnitude given and 
+      command type (21 or 20 for relative/absolute) The magnitude is 
+      converted to the number of micro steps and then the send command is 
+      used</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="moveCommands-pysrc.html#moveOne">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="moveCommands-module.html#homeAll" class="summary-sig-name">homeAll</a>(<span class="summary-sig-arg">ser</span>,
+        <span class="summary-sig-arg">s1</span>,
+        <span class="summary-sig-arg">s2</span>,
+        <span class="summary-sig-arg">s3</span>,
+        <span class="summary-sig-arg">s4</span>,
+        <span class="summary-sig-arg">gui</span>,
+        <span class="summary-sig-arg">zeroPosition</span>)</span><br />
+      Sends the command to all stages to move to the home position.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="moveCommands-pysrc.html#homeAll">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="moveCommands-module.html#moveAllToStored" class="summary-sig-name">moveAllToStored</a>(<span class="summary-sig-arg">ser</span>,
+        <span class="summary-sig-arg">store</span>,
+        <span class="summary-sig-arg">s1</span>,
+        <span class="summary-sig-arg">s2</span>,
+        <span class="summary-sig-arg">s3</span>,
+        <span class="summary-sig-arg">s4</span>,
+        <span class="summary-sig-arg">gui</span>,
+        <span class="summary-sig-arg">zeroPosition</span>)</span><br />
+      Moves all stages to the desired stored value (0-15) which can be 
+      stored using the store current method</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="moveCommands-pysrc.html#moveAllToStored">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="moveCommands-module.html#moveOneToStored" class="summary-sig-name">moveOneToStored</a>(<span class="summary-sig-arg">ser</span>,
+        <span class="summary-sig-arg">dev</span>,
+        <span class="summary-sig-arg">store</span>)</span><br />
+      Moves one stage to the desired stored value (0-15) which can be 
+      stored using the store current method</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="moveCommands-pysrc.html#moveOneToStored">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="moveCommands-module.html#storeCurrent" class="summary-sig-name">storeCurrent</a>(<span class="summary-sig-arg">ser</span>,
+        <span class="summary-sig-arg">store</span>)</span><br />
+      Stores the current position of all stages to the desired store value</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="moveCommands-pysrc.html#storeCurrent">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="moveCommands-module.html#arcTreatment" class="summary-sig-name">arcTreatment</a>(<span class="summary-sig-arg">ser</span>,
+        <span class="summary-sig-arg">mag</span>,
+        <span class="summary-sig-arg">speed</span>,
+        <span class="summary-sig-arg">s1</span>,
+        <span class="summary-sig-arg">s2</span>,
+        <span class="summary-sig-arg">s3</span>,
+        <span class="summary-sig-arg">s4</span>,
+        <span class="summary-sig-arg">zeroPosition</span>,
+        <span class="summary-sig-arg">gui</span>)</span><br />
+      Changes the speed of the stage, then rotates the rotary stage, then 
+      returns the speed of the stage to default</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="moveCommands-pysrc.html#arcTreatment">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="moveCommands-module.html#setZeroPoint" class="summary-sig-name">setZeroPoint</a>(<span class="summary-sig-arg">ser</span>,
+        <span class="summary-sig-arg">s1</span>,
+        <span class="summary-sig-arg">s2</span>,
+        <span class="summary-sig-arg">s3</span>,
+        <span class="summary-sig-arg">s4</span>,
+        <span class="summary-sig-arg">zeroPosition</span>,
+        <span class="summary-sig-arg">gui</span>)</span><br />
+      Initialization step which is required before any other movement 
+      command.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="moveCommands-pysrc.html#setZeroPoint">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="resetSpeed"></a><span class="summary-sig-name">resetSpeed</span>(<span class="summary-sig-arg">ser</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="moveCommands-pysrc.html#resetSpeed">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+<!-- ==================== VARIABLES ==================== -->
+<a name="section-Variables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Variables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="__package__"></a><span class="summary-name">__package__</span> = <code title="None">None</code>
+    </td>
+  </tr>
+</table>
+<!-- ==================== FUNCTION DETAILS ==================== -->
+<a name="section-FunctionDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Function Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-FunctionDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="stop"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">stop</span>(<span class="sig-arg">ser</span>,
+        <span class="sig-arg">s1</span>,
+        <span class="sig-arg">s2</span>,
+        <span class="sig-arg">s3</span>,
+        <span class="sig-arg">s4</span>,
+        <span class="sig-arg">zeroPosition</span>,
+        <span class="sig-arg">gui</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="moveCommands-pysrc.html#stop">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Sends the command to all stages to stop movement, should only be used 
+  as an emergency stop function as it causes other problems with the stages
+  after a stop command is sent</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>ser</code></strong> - The Serial port that has the stages connected to and open</li>
+        <li><strong class="pname"><code>s1</code></strong> - String var for stage 1's movement (z-axis)</li>
+        <li><strong class="pname"><code>s2</code></strong> - String var for stage 2's movement (rotary axis)</li>
+        <li><strong class="pname"><code>s3</code></strong> - String var for stage 3's movement (x-axis)</li>
+        <li><strong class="pname"><code>s4</code></strong> - String var for stage 4's movement (y-axis)</li>
+        <li><strong class="pname"><code>zeroPosition</code></strong> - 4-tuple containing the set zero position of the stages</li>
+        <li><strong class="pname"><code>gui</code></strong> - the reference to the main gui</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="moveAllAbsolute"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">moveAllAbsolute</span>(<span class="sig-arg">ser</span>,
+        <span class="sig-arg">mag1</span>,
+        <span class="sig-arg">mag2</span>,
+        <span class="sig-arg">mag3</span>,
+        <span class="sig-arg">mag4</span>,
+        <span class="sig-arg">s1</span>,
+        <span class="sig-arg">s2</span>,
+        <span class="sig-arg">s3</span>,
+        <span class="sig-arg">s4</span>,
+        <span class="sig-arg">zeroPosition</span>,
+        <span class="sig-arg">gui</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="moveCommands-pysrc.html#moveAllAbsolute">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>checks for valid move, then proceeds with the move based on the 
+  information sent in mag1, mag2, mag3, mag4 are the moves for the stages 
+  z, rotation, x, y in order s1, s2, s3, s4 are the StringVars that will be
+  used to return the current stage position to the loading meters</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>ser</code></strong> - The Serial port that has the stages connected to and open</li>
+        <li><strong class="pname"><code>mag1</code></strong> - Desired movement for stage 1 (z-axis)</li>
+        <li><strong class="pname"><code>mag2</code></strong> - Desired movement for stage 2 (rotary axis)</li>
+        <li><strong class="pname"><code>mag3</code></strong> - Desired movement for stage 3 (x-axis)</li>
+        <li><strong class="pname"><code>mag4</code></strong> - Desired movement for stage 4 (y-axis)</li>
+        <li><strong class="pname"><code>s1</code></strong> - String var for stage 1's movement (z-axis)</li>
+        <li><strong class="pname"><code>s2</code></strong> - String var for stage 2's movement (rotary axis)</li>
+        <li><strong class="pname"><code>s3</code></strong> - String var for stage 3's movement (x-axis)</li>
+        <li><strong class="pname"><code>s4</code></strong> - String var for stage 4's movement (y-axis)</li>
+        <li><strong class="pname"><code>zeroPosition</code></strong> - 4-tuple containing the set zero position of the stages</li>
+        <li><strong class="pname"><code>gui</code></strong> - the reference to the main gui</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="moveAllRelative"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">moveAllRelative</span>(<span class="sig-arg">ser</span>,
+        <span class="sig-arg">mag1</span>,
+        <span class="sig-arg">mag2</span>,
+        <span class="sig-arg">mag3</span>,
+        <span class="sig-arg">mag4</span>,
+        <span class="sig-arg">s1</span>,
+        <span class="sig-arg">s2</span>,
+        <span class="sig-arg">s3</span>,
+        <span class="sig-arg">s4</span>,
+        <span class="sig-arg">zeroPosition</span>,
+        <span class="sig-arg">currentPosition</span>,
+        <span class="sig-arg">gui</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="moveCommands-pysrc.html#moveAllRelative">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>checks for valid move, then proceeds with the move based on the 
+  information sent in mag1, mag2, mag3, mag4 are the moves for the stages 
+  z, rotation, x, y in order s1, s2, s3, s4 are the StringVars that will be
+  used to return the current stage position to the loading progress bars.  
+  This function differs from the moveAllAbsolute, because if the magnitude 
+  is able to be used, the function called will be a relative move, not an 
+  absolute move</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>ser</code></strong> - The Serial port that has the stages connected to and open</li>
+        <li><strong class="pname"><code>mag1</code></strong> - Desired movement for stage 1 (z-axis)</li>
+        <li><strong class="pname"><code>mag2</code></strong> - Desired movement for stage 2 (rotary axis)</li>
+        <li><strong class="pname"><code>mag3</code></strong> - Desired movement for stage 3 (x-axis)</li>
+        <li><strong class="pname"><code>mag4</code></strong> - Desired movement for stage 4 (y-axis)</li>
+        <li><strong class="pname"><code>s1</code></strong> - String var for stage 1's movement (z-axis)</li>
+        <li><strong class="pname"><code>s2</code></strong> - String var for stage 2's movement (rotary axis)</li>
+        <li><strong class="pname"><code>s3</code></strong> - String var for stage 3's movement (x-axis)</li>
+        <li><strong class="pname"><code>s4</code></strong> - String var for stage 4's movement (y-axis)</li>
+        <li><strong class="pname"><code>zeroPosition</code></strong> - 4-tuple containing the set zero position of the stages</li>
+        <li><strong class="pname"><code>currentPosition</code></strong> - 4-tuple containing the current position of the stages</li>
+        <li><strong class="pname"><code>gui</code></strong> - the reference to the main gui</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="moveOne"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">moveOne</span>(<span class="sig-arg">ser</span>,
+        <span class="sig-arg">dev</span>,
+        <span class="sig-arg">mag</span>,
+        <span class="sig-arg">cmd</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="moveCommands-pysrc.html#moveOne">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>This is the call to move one stage based on the magnitude given and 
+  command type (21 or 20 for relative/absolute) The magnitude is converted 
+  to the number of micro steps and then the send command is used</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>ser</code></strong> - The Serial port that has the stages connected to and open</li>
+        <li><strong class="pname"><code>dev</code></strong> - The device number being moved (1-4)</li>
+        <li><strong class="pname"><code>mag</code></strong> - The magnitude to move mm for dev 1, 3, 4, and degrees for 2</li>
+        <li><strong class="pname"><code>cmd</code></strong> - The command being issued 20 for Absolute move, 21 for Relative 
+          move.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="homeAll"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">homeAll</span>(<span class="sig-arg">ser</span>,
+        <span class="sig-arg">s1</span>,
+        <span class="sig-arg">s2</span>,
+        <span class="sig-arg">s3</span>,
+        <span class="sig-arg">s4</span>,
+        <span class="sig-arg">gui</span>,
+        <span class="sig-arg">zeroPosition</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="moveCommands-pysrc.html#homeAll">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Sends the command to all stages to move to the home position.  This is
+  required at the beginning of the program in order to initialize the 
+  stages as well as if something goes wrong with the stages</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>ser</code></strong> - The Serial port that has the stages connected to and open</li>
+        <li><strong class="pname"><code>s1</code></strong> - String var for stage 1's movement (z-axis)</li>
+        <li><strong class="pname"><code>s2</code></strong> - String var for stage 2's movement (rotary axis)</li>
+        <li><strong class="pname"><code>s3</code></strong> - String var for stage 3's movement (x-axis)</li>
+        <li><strong class="pname"><code>s4</code></strong> - String var for stage 4's movement (y-axis)</li>
+        <li><strong class="pname"><code>gui</code></strong> - the reference to the main gui</li>
+        <li><strong class="pname"><code>zeroPosition</code></strong> - 4-tuple containing the set zero position of the stages</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="moveAllToStored"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">moveAllToStored</span>(<span class="sig-arg">ser</span>,
+        <span class="sig-arg">store</span>,
+        <span class="sig-arg">s1</span>,
+        <span class="sig-arg">s2</span>,
+        <span class="sig-arg">s3</span>,
+        <span class="sig-arg">s4</span>,
+        <span class="sig-arg">gui</span>,
+        <span class="sig-arg">zeroPosition</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="moveCommands-pysrc.html#moveAllToStored">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Moves all stages to the desired stored value (0-15) which can be 
+  stored using the store current method</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>ser</code></strong> - The Serial port that has the stages connected to and open</li>
+        <li><strong class="pname"><code>store</code></strong> - The store bank value (0-15)</li>
+        <li><strong class="pname"><code>s1</code></strong> - String var for stage 1's movement (z-axis)</li>
+        <li><strong class="pname"><code>s2</code></strong> - String var for stage 2's movement (rotary axis)</li>
+        <li><strong class="pname"><code>s3</code></strong> - String var for stage 3's movement (x-axis)</li>
+        <li><strong class="pname"><code>s4</code></strong> - String var for stage 4's movement (y-axis)</li>
+        <li><strong class="pname"><code>gui</code></strong> - the reference to the main gui</li>
+        <li><strong class="pname"><code>zeroPosition</code></strong> - 4-tuple containing the set zero position of the stages</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="moveOneToStored"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">moveOneToStored</span>(<span class="sig-arg">ser</span>,
+        <span class="sig-arg">dev</span>,
+        <span class="sig-arg">store</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="moveCommands-pysrc.html#moveOneToStored">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Moves one stage to the desired stored value (0-15) which can be stored
+  using the store current method</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>ser</code></strong> - The Serial port that has the stages connected to and open</li>
+        <li><strong class="pname"><code>dev</code></strong> - The device number being moved (1-4)</li>
+        <li><strong class="pname"><code>store</code></strong> - The store bank value (0-15)</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="storeCurrent"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">storeCurrent</span>(<span class="sig-arg">ser</span>,
+        <span class="sig-arg">store</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="moveCommands-pysrc.html#storeCurrent">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Stores the current position of all stages to the desired store 
+  value</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>ser</code></strong> - The Serial port that has the stages connected to and open</li>
+        <li><strong class="pname"><code>store</code></strong> - The store bank value (0-15)</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="arcTreatment"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">arcTreatment</span>(<span class="sig-arg">ser</span>,
+        <span class="sig-arg">mag</span>,
+        <span class="sig-arg">speed</span>,
+        <span class="sig-arg">s1</span>,
+        <span class="sig-arg">s2</span>,
+        <span class="sig-arg">s3</span>,
+        <span class="sig-arg">s4</span>,
+        <span class="sig-arg">zeroPosition</span>,
+        <span class="sig-arg">gui</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="moveCommands-pysrc.html#arcTreatment">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Changes the speed of the stage, then rotates the rotary stage, then 
+  returns the speed of the stage to default</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>ser</code></strong> - Serial port that has been opened int he main gui</li>
+        <li><strong class="pname"><code>mag</code></strong> - Magnitude of the move (in degrees)</li>
+        <li><strong class="pname"><code>speed</code></strong> - Desired speed to rotate the stages</li>
+        <li><strong class="pname"><code>s1</code></strong> - String var for stage 1's movement (z-axis)</li>
+        <li><strong class="pname"><code>s2</code></strong> - String var for stage 2's movement (rotary axis)</li>
+        <li><strong class="pname"><code>s3</code></strong> - String var for stage 3's movement (x-axis)</li>
+        <li><strong class="pname"><code>s4</code></strong> - String var for stage 4's movement (y-axis)</li>
+        <li><strong class="pname"><code>zeroPosition</code></strong> - 4-tuple containing the set zero position of the stages</li>
+        <li><strong class="pname"><code>gui</code></strong> - the reference to the main gui</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="setZeroPoint"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">setZeroPoint</span>(<span class="sig-arg">ser</span>,
+        <span class="sig-arg">s1</span>,
+        <span class="sig-arg">s2</span>,
+        <span class="sig-arg">s3</span>,
+        <span class="sig-arg">s4</span>,
+        <span class="sig-arg">zeroPosition</span>,
+        <span class="sig-arg">gui</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="moveCommands-pysrc.html#setZeroPoint">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Initialization step which is required before any other movement 
+  command.  This homes the devices (in order to reset the zero position of 
+  the stage's memory) then moves the stages to the zero position.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>ser</code></strong> - The Serial port that has the stages connected to and open</li>
+        <li><strong class="pname"><code>s1</code></strong> - String var for stage 1's movement (z-axis)</li>
+        <li><strong class="pname"><code>s2</code></strong> - String var for stage 2's movement (rotary axis)</li>
+        <li><strong class="pname"><code>s3</code></strong> - String var for stage 3's movement (x-axis)</li>
+        <li><strong class="pname"><code>s4</code></strong> - String var for stage 4's movement (y-axis)</li>
+        <li><strong class="pname"><code>zeroPosition</code></strong> - 4-tuple containing the set zero position of the stages</li>
+        <li><strong class="pname"><code>gui</code></strong> - the reference to the main gui</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://code.google.com/p/mouse-stage-control-code/">x-TRAP</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Sat Sep 15 23:47:28 2012
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

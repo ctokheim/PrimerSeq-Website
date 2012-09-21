@@ -14,6 +14,7 @@
     <!-- Le styles -->
     <link href="{{ ASSET_PATH }}/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="{{ ASSET_PATH }}/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+    <link rel="stylesheet" href="{{ ASSET_PATH }}/css/pygments.css" type="text/css" />
 
     <!-- Le fav and touch icons -->
   <!-- Update these with your own images
@@ -26,7 +27,7 @@
 
   <body>
 
-    <div class="navbar">
+    <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
           <a class="brand" href="{{ HOME_PATH }}">{{ site.title }}</a>
@@ -39,21 +40,32 @@
       </div>
     </div>
 
-    <div class="container">
+    <div class="container" id="container">
 
       <div class="content">
         {{ content }}
       </div>
 
+  </div> <!-- /container -->
+
+  <div class="bot">
       <footer>
-        <p>&copy; {{ site.author.name }} 2012 
-          with help from <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>
-          and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
-        </p>
+      <div style="margin:0;padding:0;margin-left:auto;margin-right:auto;margin-bottom:10px;width:400px;">
+
+          <img src="{{ ASSET_PATH }}/img/TokheimC.jpg" style="display:block;border-radius:2px;box-shadow: 2px 2px 2px black;float:left;margin:5px;"/>
+          <!-- <div style="margin:0;padding:0;"> -->
+              <p>I work in <a href="http://www.medicine.uiowa.edu/Labs/Xing/">Yi Xing's</a> RNA genomics and bioinformatics lab as a research assistant at the University of Iowa. This includes web development, software development, and computational genomic projects specifically dealing with high throughput sequencing data.</p>
+                            <!--</div>-->
+          <div style="clear:both;"></div>
+      </div>
+      <p style="margin-bottom:5px;">
+      &copy; {{ site.author.name }} 2012 
+              with help from <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>
+              and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
+              </p>
       </footer>
-
-    </div> <!-- /container -->
-
+  </div>
+    <script src="{{ ASSET_PATH }}/bootstrap/js/bootstrap.min.js" type="text/javascript" charset="utf-8"> </script>
     {% include JB/analytics %}
   </body>
 </html>
