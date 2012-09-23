@@ -1,7 +1,8 @@
 /* Override some defaults */
 html, body {
   background-color: white;
-  padding-top:25px;
+  padding: 0;
+  margin: 0;
 }
 
 /* Add some flair to headers */
@@ -28,7 +29,7 @@ h1, h2, h3, h4, h5, small {font-family: "ComputerModern",Georgia,Palatino,"Centu
   padding-top:1px;
 }
 
-body .container {margin:0;margin-left:10%;width:800px;}
+body .container {margin:0;margin-left:10%;width:800px; margin-top:50px;}
 
 .navbar-inner .container {margin:0;margin-left:10%;}
 
