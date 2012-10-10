@@ -36,6 +36,16 @@ Install rake:
 
     $ sudo apt-get install rake
 
+For python syntax highlighting you need to install pygments
+
+    $ sudo apt-get install python-pygments
+
+Next you have to generate the css highlighting file
+
+    $ pygmentize -S default -f html > path/to/your/css
+
+Make sure you include the cascading style sheet in your `_includes/themes/twitter/default.html` file.
+
 ## Usage
 
 The files you will actually put on your website is found in the `_site` directory. Generating the
