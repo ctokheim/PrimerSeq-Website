@@ -5,8 +5,7 @@ html, body {
   margin: 0;
 }
 
-/* Add some flair to headers */
-h1, h2, h3, h4, h5, small {font-family: "ComputerModern",Georgia,Palatino,"Century Schoolbook L","Times New Roman",Times,serif;}
+h1, h2, h3, h4, h5, small {museo-slab, "Helvetica Neue", Helvetica, Arial, sans-serif}
 
 .navbar {
   margin-bottom: 0;
@@ -29,9 +28,9 @@ h1, h2, h3, h4, h5, small {font-family: "ComputerModern",Georgia,Palatino,"Centu
   padding-top:1px;
 }
 
-body .container {margin:0;margin-left:10%;width:800px; margin-top:50px;}
+body .container {margin:0;/* margin-left:10%; */ margin-left:auto; margin-right:auto;width:800px; margin-top:50px;}
 
-.navbar-inner .container {margin:0;margin-left:10%;}
+.navbar-inner .container {margin:0; margin-left:auto;margin-right:auto;width:800px;/*margin-left:10%;*/}
 
 #container{border: 10px solid lightgray; border-radius: 5px;}
 

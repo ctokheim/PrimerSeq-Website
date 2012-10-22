@@ -13,6 +13,7 @@
 
     <!-- Le styles -->
     <link href="{{ ASSET_PATH }}/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ ASSET_PATH }}/bootstrap/css/font-awesome.css">
     <link href="{{ ASSET_PATH }}/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
     <link rel="stylesheet" href="{{ ASSET_PATH }}/css/pygments.css" type="text/css" />
     
@@ -30,7 +31,7 @@
     <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
-          <a class="brand" href="{{ HOME_PATH }}">{{ site.title }}</a>
+          <a class="brand" href="{{ HOME_PATH }}"><i class="icon-home" style="margin-top:5px; margin-right:5px;"></i> {{ site.title }}</a>
           <ul class="nav">
             {% assign pages_list = site.pages %}
             {% assign group = 'navigation' %}
@@ -50,18 +51,21 @@
 
   <div class="bot">
       <footer>
-      <div style="margin:0;padding:0;margin-left:auto;margin-right:auto;margin-bottom:10px;width:400px;">
+      <div style="margin:0;padding:0;margin-left:auto;margin-right:auto;margin-bottom:10px;width:300px;">
 
-          <img src="{{ ASSET_PATH }}/img/TokheimC.jpg" style="display:block;border-radius:2px;box-shadow: 2px 2px 2px black;float:left;margin:5px;"/>
+          <div style="display:block;float:left;width:100px;font-size:50px; margin-top:35px;"><i class="icon-info-sign icon-large"></i> </div>
           <!-- <div style="margin:0;padding:0;"> -->
-              <p>I work in <a href="http://www.medicine.uiowa.edu/Labs/Xing/">Yi Xing's</a> RNA genomics and bioinformatics lab as a research assistant at the University of Iowa. This includes web development, software development, and computational genomic projects specifically dealing with high throughput sequencing data.</p>
+              <div style="width:200px;float:left;">Lab: <a href="http://www.medicine.uiowa.edu/Labs/Xing/">Yi Xing's</a> RNA genomics and bioinformatics lab.
+                 </br>@University of Iowa
+                 </br>Contact: <a href="mailto:collin-tokheim@uiowa.edu">Collin Tokheim</a>
+              </div>
                             <!--</div>-->
           <div style="clear:both;"></div>
       </div>
       <p style="margin-bottom:5px;">
       &copy; {{ site.author.name }} 2012 
-              with help from <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>
-              and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
+              with help from <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>,</br> 
+              <a href="http://fortawesome.github.com/Font-Awesome/">Font-Awesome</a> and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
               </p>
       </footer>
   </div>
