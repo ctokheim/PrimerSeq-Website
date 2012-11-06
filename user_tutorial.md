@@ -59,7 +59,7 @@ not inclusive.
 * *Gene ID:* flag for whether the GTF has a valid Gene ID
 * *Keep Temporary:* flag for keeping temporary files created when running PrimerSeq
 * *Read Threshold:* minimum read count necessary to define a novel junction from RNA-Seq
-* *Anchor Length:* minimum number of bases on both sides of a junction read for it to be considered valid
+* *Anchor Length:* minimum number of bases on both sides of a junction for a read to be considered valid
 * *Min. Jct Count:* assign at least this number of reads to a junction known in the GTF annotation
 
 ## 4. Select Ouput
