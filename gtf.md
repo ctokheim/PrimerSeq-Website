@@ -109,7 +109,7 @@ To start changing the gene IDs press the *"Change Gene IDs"* button. You will no
 disabled while PrimerSeq is still in progress. When finished, the *"Change Gene IDs"* button will be available
 again.
 
-## Advanced (Use at your own risk)
+## Advanced <small>Use at your own risk</small>
 
 PrimerSeq also allows you to mix GTF files together or use output from transcript assembly programs like [Cufflinks](http://cufflinks.cbcb.umd.edu/).
 Like any normal GTF, output from programs like Cufflinks can be used as long as it is properly sorted (see above for details). In addition you can combine
