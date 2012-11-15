@@ -13,20 +13,20 @@ You can obtain GTF files easily from the [UCSC table browser](http://genome.ucsc
 and [Ensembl](http://www.ensembl.org/info/data/ftp/index.html). For example,
 the first few lines of UCSC's gene annotation for hg19 looks like the following:
 
-<pre style="overflow-x: scroll; white-space: nowrap;">
-chr1    hg19_knownGene  exon    11874   12227   0.000000    +   .   gene_id "uc001aaa.3"; transcript_id "uc001aaa.3";<br/>
-chr1    hg19_knownGene  exon    12613   12721   0.000000    +   .   gene_id "uc001aaa.3"; transcript_id "uc001aaa.3";<br/>
-chr1    hg19_knownGene  exon    13221   14409   0.000000    +   .   gene_id "uc001aaa.3"; transcript_id "uc001aaa.3";<br/> 
-chr1    hg19_knownGene  exon    11874   12227   0.000000    +   .   gene_id "uc010nxr.1"; transcript_id "uc010nxr.1";<br/> 
-chr1    hg19_knownGene  exon    12646   12697   0.000000    +   .   gene_id "uc010nxr.1"; transcript_id "uc010nxr.1";<br/> 
-chr1    hg19_knownGene  exon    13221   14409   0.000000    +   .   gene_id "uc010nxr.1"; transcript_id "uc010nxr.1";<br/> 
-chr1    hg19_knownGene  start_codon 12190   12192   0.000000    +   .   gene_id "uc010nxq.1"; transcript_id "uc010nxq.1";<br/> 
-chr1    hg19_knownGene  CDS 12190   12227   0.000000    +   0   gene_id "uc010nxq.1"; transcript_id "uc010nxq.1";<br/> 
-chr1    hg19_knownGene  exon    11874   12227   0.000000    +   .   gene_id "uc010nxq.1"; transcript_id "uc010nxq.1";<br/> 
-chr1    hg19_knownGene  CDS 12595   12721   0.000000    +   1   gene_id "uc010nxq.1"; transcript_id "uc010nxq.1";<br/>
+<pre style="overflow-x: scroll; white-space:nowrap;">
+chr1&nbsp;&nbsp;&nbsp;&nbsp;hg19_knownGene&nbsp;&nbsp;exon&nbsp;&nbsp;&nbsp;&nbsp;11874&nbsp;&nbsp;&nbsp;12227&nbsp;&nbsp;&nbsp;0.000000&nbsp;&nbsp;&nbsp;&nbsp;+&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;gene_id&nbsp;"uc001aaa.3";&nbsp;transcript_id&nbsp;"uc001aaa.3";<br/>
+chr1&nbsp;&nbsp;&nbsp;&nbsp;hg19_knownGene&nbsp;&nbsp;exon&nbsp;&nbsp;&nbsp;&nbsp;12613&nbsp;&nbsp;&nbsp;12721&nbsp;&nbsp;&nbsp;0.000000&nbsp;&nbsp;&nbsp;&nbsp;+&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;gene_id&nbsp;"uc001aaa.3";&nbsp;transcript_id&nbsp;"uc001aaa.3";<br/>
+chr1&nbsp;&nbsp;&nbsp;&nbsp;hg19_knownGene&nbsp;&nbsp;exon&nbsp;&nbsp;&nbsp;&nbsp;13221&nbsp;&nbsp;&nbsp;14409&nbsp;&nbsp;&nbsp;0.000000&nbsp;&nbsp;&nbsp;&nbsp;+&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;gene_id&nbsp;"uc001aaa.3";&nbsp;transcript_id&nbsp;"uc001aaa.3";<br/>
+chr1&nbsp;&nbsp;&nbsp;&nbsp;hg19_knownGene&nbsp;&nbsp;exon&nbsp;&nbsp;&nbsp;&nbsp;11874&nbsp;&nbsp;&nbsp;12227&nbsp;&nbsp;&nbsp;0.000000&nbsp;&nbsp;&nbsp;&nbsp;+&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;gene_id&nbsp;"uc010nxr.1";&nbsp;transcript_id&nbsp;"uc010nxr.1";<br/>
+chr1&nbsp;&nbsp;&nbsp;&nbsp;hg19_knownGene&nbsp;&nbsp;exon&nbsp;&nbsp;&nbsp;&nbsp;12646&nbsp;&nbsp;&nbsp;12697&nbsp;&nbsp;&nbsp;0.000000&nbsp;&nbsp;&nbsp;&nbsp;+&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;gene_id&nbsp;"uc010nxr.1";&nbsp;transcript_id&nbsp;"uc010nxr.1";<br/>
+chr1&nbsp;&nbsp;&nbsp;&nbsp;hg19_knownGene&nbsp;&nbsp;exon&nbsp;&nbsp;&nbsp;&nbsp;13221&nbsp;&nbsp;&nbsp;14409&nbsp;&nbsp;&nbsp;0.000000&nbsp;&nbsp;&nbsp;&nbsp;+&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;gene_id&nbsp;"uc010nxr.1";&nbsp;transcript_id&nbsp;"uc010nxr.1";<br/>
+chr1&nbsp;&nbsp;&nbsp;&nbsp;hg19_knownGene&nbsp;&nbsp;start_codon&nbsp;12190&nbsp;&nbsp;&nbsp;12192&nbsp;&nbsp;&nbsp;0.000000&nbsp;&nbsp;&nbsp;&nbsp;+&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;gene_id&nbsp;"uc010nxq.1";&nbsp;transcript_id&nbsp;"uc010nxq.1";<br/>
+chr1&nbsp;&nbsp;&nbsp;&nbsp;hg19_knownGene&nbsp;&nbsp;CDS&nbsp;12190&nbsp;&nbsp;&nbsp;12227&nbsp;&nbsp;&nbsp;0.000000&nbsp;&nbsp;&nbsp;&nbsp;+&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;gene_id&nbsp;"uc010nxq.1";&nbsp;transcript_id&nbsp;"uc010nxq.1";<br/>
+chr1&nbsp;&nbsp;&nbsp;&nbsp;hg19_knownGene&nbsp;&nbsp;exon&nbsp;&nbsp;&nbsp;&nbsp;11874&nbsp;&nbsp;&nbsp;12227&nbsp;&nbsp;&nbsp;0.000000&nbsp;&nbsp;&nbsp;&nbsp;+&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;gene_id&nbsp;"uc010nxq.1";&nbsp;transcript_id&nbsp;"uc010nxq.1";<br/>
+chr1&nbsp;&nbsp;&nbsp;&nbsp;hg19_knownGene&nbsp;&nbsp;CDS&nbsp;12595&nbsp;&nbsp;&nbsp;12721&nbsp;&nbsp;&nbsp;0.000000&nbsp;&nbsp;&nbsp;&nbsp;+&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;gene_id&nbsp;"uc010nxq.1";&nbsp;transcript_id&nbsp;"uc010nxq.1";<br/>
 </pre>
 
-The columns are tab separated (shown above as a space to condense length) and are defined by the GTF standard specified [here](http://mblab.wustl.edu/GTF22.html).
+The columns are tab separated and are defined by the GTF standard specified [here](http://mblab.wustl.edu/GTF22.html).
 PrimerSeq only uses the lines with the "exon" feature (column 3) and ignores other lines.
 
 ## Be Careful 
