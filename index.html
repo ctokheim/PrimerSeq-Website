@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -57,13 +57,21 @@
 <div class="row">
   <div class="span8">
 
-      <p>PrimerSeq is currently under Alpha testing. Alhtough a reasonably stable version will likely be released in a month or two. You can
-      still download the current version but it may not work smoothly "out of the box".</p>
+      <img src="display_plot.png" class="pull-right" width="400px" />
+      <p>PrimerSeq designs RT-PCR primers on appropriate flanking exons around your target of interest. Its aim is to design primers for validating alternative splicing events.
+      PrimerSeq is particularly advantageous for designing a large number of primers for validating alternative splicing events found in RNA-Seq data.
+      PrimerSeq incorporates RNA-Seq data in the design process to weight exons by their read counts.
+      Essentially, the RNA-Seq data allows primers to be placed where you want them to be.
+      This could be for your particular cell line or experimental condition, rather than using annotations that incorporate transcripts that are not expressed for your data.
+      Alternatively, you can design primers that are always on constitutive exons.
+      </p>
+
 <h2 id='Documentation'>Documentation</h2>
 
 <ul>
+    <li><a href="getting_started.html">Getting Started</a></li>
     <li><a href="user_tutorial.html">User tutorial</a></li>
-    <li><a href="command_line.html">Command line</a> usage</li>
+    <li><a href="http://ctokheim.github.com/PrimerSeq">Developer & Command line</a> usage</li>
 </ul>
 
 <h2 id='downloads'>Downloads</h2>
