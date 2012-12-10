@@ -38,10 +38,10 @@ This example GTF and many GTFs are also not sorted by chromosome and position. P
 GTF as input. For these reasons, if you are using a common annotation I **strongly** suggest you download it from the list
 below.
 
-* [Homo_sapiens.knownGene.hg19.sorted.withGenes.gtf](http://sourceforge.net/projects/primerseq/files/GTF/Homo_sapiens.knownGene.hg19.sorted.withGenes.gtf/download)
-* [Homo_sapiens.GRCh37.69.sorted.gtf](http://sourceforge.net/projects/primerseq/files/GTF/Homo_sapiens.GRCh37.69.sorted.gtf/download)
-* [Mus_musculus.knownGene.mm9.sorted.withGenes.gtf](http://sourceforge.net/projects/primerseq/files/GTF/Mus_musculus.knownGene.mm9.sorted.withGenes.gtf/download)
-* [Mus_musculus.GRCm38.69.sorted.gtf](http://sourceforge.net/projects/primerseq/files/GTF/Mus_musculus.GRCm38.69.sorted.gtf/download)
+* [Homo_sapiens.knownGene.hg19.sorted.withGenes.gtf](http://sourceforge.net/projects/primerseq/files/GTF/Homo_sapiens.knownGene.hg19.sorted.withGenes.gtf.gz/download)
+* [Homo_sapiens.GRCh37.69.sorted.gtf](http://sourceforge.net/projects/primerseq/files/GTF/Homo_sapiens.GRCh37.69.sorted.gtf.gz/download)
+* [Mus_musculus.knownGene.mm9.sorted.withGenes.gtf](http://sourceforge.net/projects/primerseq/files/GTF/Mus_musculus.knownGene.mm9.sorted.withGenes.gtf.gz/download)
+* [Mus_musculus.GRCm38.69.sorted.gtf](http://sourceforge.net/projects/primerseq/files/GTF/Mus_musculus.GRCm38.69.sorted.gtf.gz/download)
 
 If you feel a widely used annotation is missing, feel free to suggest that I 
 include it by [email](mailto:primerseq@gmail.com).
@@ -53,7 +53,7 @@ For any GTF file not downloaded from the PrimerSeq website, you should
 sort the GTF by `Edit -> Sort GTF` in the PrimerSeq GUI.
 
 <span style="display:block"><span class="label label-warning">Warning!</span> Depending on your platform and hardware,
-you may not have sufficient memory to sort a GTF. I reccomend you use a computer with at least 4G of RAM.
+you may not have sufficient memory to sort a GTF. I recommend you use a computer with at least 4G of RAM.
 If this is not an option you can
 either use <a href="https://github.com/ctokheim/PrimerSeq/blob/master/bin/java_src/SortGtf.java">SortGtf.java</a>
 or <a href="https://github.com/ctokheim/PrimerSeq/blob/master/gtf.py">gtf.py</a> from the command line to properly sort your GTF.
@@ -74,7 +74,7 @@ or <a href="https://github.com/ctokheim/PrimerSeq/blob/master/gtf.py">gtf.py</a>
 </br>
 
 Select the GTF you wish to sort using the *"GTF:"* button. Next select the output file path
-for the sorted gtf by pressing the *"Sorted GTF:"* button. Now, sort the GTF by pressing the
+for the sorted gtf by pressing the *"Sorted GTF:"* button. Now, sort the GTF by pressing
 the *"Sort"* button. While PrimerSeq is sorting your GTF the *"Sort"* button should now say
 *"Sorting . . ."*. When sorting is finished you should see the button text return to *"Sort"*.
 

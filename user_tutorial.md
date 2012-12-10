@@ -97,10 +97,14 @@ PRIMER_PAIR_WT_TEMPLATE_MISPRIMING=
 <img src="run_primerseq.png" style="display:block; margin-left:auto;margin-right:auto;" />
 
 A dialog should appear letting you know that PrimerSeq is designing the primers. Once PrimerSeq
-is finished the dialog will disappear and you can find your output as specified in the **4. Select Output** step.
+is finished the dialog will disappear and a new window with the PrimerSeq results should appear. 
+You can also find your output as a text file as specified in the **4. Select Output** step.
+
+<center>PrimerSeq Results</center>
+<img src="display_results.png" style="display:block; margin-left:auto;margin-right:auto;" />
 
 ## 6. Plot Results
-After running PrimerSeq you can plot the results by navigating to <i>View -> Plot</i>. A dialog should appear
+After running PrimerSeq you can plot the results by pressing the "Create Plots" button in the results window. A dialog should appear
 as shown below.
 
 <center>Open plot dialog by <i>View -> Plot</i></center>
@@ -119,5 +123,25 @@ some one has already created a BigWig file for you.
 Press the plot button when you are ready. The button should be disabled and say "Ploting . . ." while PrimerSeq is creating your plot.
 Once PrimerSeq is finished, a plot window should appear as shown below.
 
-<img src="display_plot.png" style="display:block; margin-left:auto;margin-right:auto;" />
+<img src="display_plot2.png" style="display:block; margin-left:auto;margin-right:auto;" />
+
+### In-Silico PCR
+
+As a secondary check for primer design, you can quickly run the In-Silico PCR from
+UCSC's genome browser through PrimerSeq. Press the In-Silico PCR button in the tool bar of
+the results window. The below dialog should now appear.
+
+<center>In-Silico PCR Dialog</center>
+<img src="insilico_pcr.png" style="display:block;margin-left:auto;margin-right:auto;" />
+</br>
+
+The correct input for human hg19 should be present by default. To use other species or
+assemblies you will need to look at the naming on the UCSC's [In-Silico PCR webpage](http://genome.ucsc.edu/cgi-bin/hgPcr).
+Now select the only available option from the "Select Target" drop-down list.
+When ready, press the "Run In-Silico PCR" button. Your default web browser should now
+open the results of In-Silico PCR. In this case there was unavoidable amplification of a second gene since the two genes overlapped.
+This scenario highlights that In-Silico PCR should be done to identify non-intended amplification.
+
+<center>In-Silico PCR Results</center>
+<img src="insilico_pcr_results2.png" style="display:block;margin-left:auto;margin-right:auto;" />
 

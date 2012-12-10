@@ -12,7 +12,7 @@ PrimerSeq supports three major operating systems (Windows, Mac OS, and Linux). P
 for your OS by clicking the appropriate linke below.
 
 1. [Windows](windows.html)
-2. Mac (*coming soon ...*)
+2. Mac OS (*coming soon ...*)
 3. Linux (*coming soon ...*)
 
 ## Example
@@ -90,7 +90,7 @@ file(s) provided.
 ### In-Silico PCR
 
 As a secondary check for primer design, you can quickly run the In-Silico PCR from
-UCSC's genome browser through PrimerSeq. Press the In-Silico PCR button in tool bar of
+UCSC's genome browser through PrimerSeq. Press the In-Silico PCR button in the tool bar of
 the results window. The below dialog should now appear.
 
 <center>In-Silico PCR Dialog</center>
