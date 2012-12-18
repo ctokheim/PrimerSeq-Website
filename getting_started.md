@@ -68,13 +68,14 @@ by a semi-colon:
 11. **Upstream Psi** - Upstream exon inclusion level
 12. **Downstream Exon Coord.** - Downstream exon coordinate
 13. **Downstream Psi** - Downstream exon inclusion level
+14. **ASM Region** - Region where alternative splicing events occur
 
 ### Visualization
 
 PrimerSeq allows you to visualize the results, providing a quick intuitive check of the primer design. Press the "Create Plots"
-button in the results window tool bar. A dialog should now appear. To plot the results, you need to specify a BigWig file and the target 
+button in the results window tool bar. A dialog should now appear. To plot the results, you need to specify a BigWig file and the target
 exon of interest (in this example there is only one). You can find a BigWig file for the example in the PrimerSeq installation
-directory `example/chr18_9561977_9563548.bw`. Select the only available option in the "Select Target" drop-down list.
+directory `example/example.bw`. Select the only available option in the "Select Target" drop-down list.
 
 <center>Choose one or multiple BigWig file(s) and then select your target exon</center>
 <img src="plot_example.png" style="display:block;margin-left:auto;margin-right:auto;" />
@@ -99,6 +100,7 @@ the results window. The below dialog should now appear.
 
 The correct input for human hg19 should be present by default. To use other species or
 assemblies you will need to look at the naming on the UCSC's [In-Silico PCR webpage](http://genome.ucsc.edu/cgi-bin/hgPcr).
+Leave the In-Silico PCR type as *UCSC Genes*.
 Now select the only available option from the "Select Target" drop-down list.
 When ready, press the "Run In-Silico PCR" button. Your default web browser should now
 open the results of In-Silico PCR. The result should match the result from the PrimerSeq output.
@@ -106,3 +108,6 @@ open the results of In-Silico PCR. The result should match the result from the P
 <center>In-Silico PCR Results</center>
 <img src="insilico_pcr_results.png" style="display:block;margin-left:auto;margin-right:auto;" />
 
+You can perform In-Silico PCR on the genome (not shown) instead of UCSC's transcripts by selecting *"Genome"*
+from the *"Select Type"* dropdown. This may be necessary if you are using a GTF file from other sources
+like Ensembl. You will need to significantly increase the *Max Product Size* since the producct lengths will include introns.

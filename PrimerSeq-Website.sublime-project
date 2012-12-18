@@ -1,0 +1,10 @@
+{
+	"folders":
+	[
+		{
+			"path": "/home/ctokheim/PrimerSeq-Website",
+			"file_exclude_patterns": ["*.png"],
+			"folder_exclude_patterns": ["/home/ctokheim/PrimerSeq-Website/_site"]
+		}
+	]
+}

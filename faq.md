@@ -16,7 +16,7 @@ tagline: "{Frequently Asked Questions}"
   <div id="collapseOne" class="accordion-body collapse in">
     <div class="accordion-inner">
 Sorting a GTF fails likely because of insufficient memory. You can change the allotted memory by editing the PrimerSeq.cfg
-file found in the PrimerSeq installation directory. Change the "sort" option above the 1536 MB default. You may need to install 
+file found in the PrimerSeq installation directory. Change the "sort" option above the 1536 MB default. You may need to install
 a 64 bit version of java or switch to computer with more memory.
     </div>
   </div>
@@ -58,7 +58,32 @@ PrimerSeq does not currently have a Mac OS download. However, PrimerSeq was buil
   </div>
   <div id="collapseFour" class="accordion-body collapse">
     <div class="accordion-inner">
-PrimerSeq does not currently have a linux download. However, PrimerSeq is developed on a debian based linux distribution so a download will be available soon.
+PrimerSeq does support linux. There is a 64 bit download tested on Ubuntu.
+    </div>
+  </div>
+</div>
+<div class="accordion-group">
+  <div class="accordion-heading">
+    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion5" href="#collapseFive">
+     PrimerSeq says the Java JRE is required, what should I do?
+    </a>
+  </div>
+  <div id="collapseFive" class="accordion-body collapse">
+    <div class="accordion-inner">
+      PrimerSeq requires the Java JRE to be installed on your computer.
+      You can install the <a href="http://www.oracle.com/technetwork/java/javase/downloads/java-se-jre-7-download-432155.html">Java JRE</a> from oracle.
+    </div>
+  </div>
+</div>
+<div class="accordion-group">
+  <div class="accordion-heading">
+    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion6" href="#collapseSix">
+      How do I decompress the .2bit format?
+    </a>
+  </div>
+  <div id="collapseSix" class="accordion-body collapse">
+    <div class="accordion-inner">
+You should use the <i>twoBitToFa</i> utility from UCSC. You can find the utility for Mac OS and linux <a href="http://hgdownload.cse.ucsc.edu/admin/exe/">here</a>.
     </div>
   </div>
 </div>
