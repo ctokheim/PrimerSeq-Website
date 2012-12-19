@@ -9,7 +9,7 @@ tagline: "{Using PrimerSeq}"
 ## Installation
 
 PrimerSeq supports three major operating systems (Windows, Mac OS, and Linux). Please follow the instructions
-for your OS by clicking the appropriate linke below.
+for your OS by clicking the appropriate link below.
 
 1. [Windows](windows.html)
 2. Mac OS (*coming soon ...*)
@@ -52,7 +52,7 @@ You may also find the results in a text file where you specified it previously.
 
 ### Information
 
-A PrimerSeq result consists of 13 columns, multiple results are separated
+A PrimerSeq result consists of 14 columns, multiple results are separated
 by a semi-colon:
 
 1. **ID** - unique identifier
@@ -110,4 +110,4 @@ open the results of In-Silico PCR. The result should match the result from the P
 
 You can perform In-Silico PCR on the genome (not shown) instead of UCSC's transcripts by selecting *"Genome"*
 from the *"Select Type"* dropdown. This may be necessary if you are using a GTF file from other sources
-like Ensembl. You will need to significantly increase the *Max Product Size* since the producct lengths will include introns.
+like Ensembl. You will need to significantly increase the *Max Product Size* since the product lengths will include introns.
