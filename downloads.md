@@ -7,8 +7,8 @@ description: ""
 
 ## Current Release
 
-* [Windows: PrimerSeq v1.0.0](http://sourceforge.net/projects/primerseq/files/PrimerSeq/PrimerSeq.win32.1.0.0.exe/download)
-* [64 bit Linux: PrimerSeq v0.2.3](http://sourceforge.net/projects/primerseq/files/PrimerSeq/PrimerSeq.debian.x64.0.2.3.tgz/download)
+* [Windows: PrimerSeq v1.0.0.beta](http://sourceforge.net/projects/primerseq/files/PrimerSeq/PrimerSeq.1.0.0.beta.win32.exe/download)
+* [Linux: PrimerSeq v1.0.0.beta (*Source*)](https://github.com/ctokheim/PrimerSeq/archive/v1.0.0.beta.tar.gz)
 
 ## Annotations
 
@@ -23,6 +23,15 @@ UCSC's known gene annotation is recommended over ensembl.
 
 ### FASTA
 
+#### Ensembl (hard masked)
+
+If you want other genome sequences from Ensembl you can visit their [FTP download site](www.ensembl./info/data/ftp).
+
+* [GRCh37 (hg19)](ftp://ftp.ensembl.org/pub/release-69/fasta/homo_sapiens/dna/Homo_sapiens.GRCh37.69.dna_rm.primary_assembly.fa.gz)
+* [NCBIM37 (mm9)](ftp://ftp.ensembl.org/pub/release-67/fasta/mus_musculus/dna/Mus_musculus.NCBIM37.67.dna_rm.toplevel.fa.gz)
+
+#### UCSC (.2bit format)
+
 * [hg19](http://hgdownload.cse.ucsc.edu/goldenPath/hg19/bigZips/hg19.2bit)
 * [mm9](http://hgdownload.cse.ucsc.edu/goldenPath/mm9/bigZips/mm9.2bit)
 
@@ -33,3 +42,8 @@ UCSC's known gene annotation is recommended over ensembl.
 * [PrimerSeq v0.2.2](http://sourceforge.net/projects/primerseq/files/PrimerSeq/PrimerSeq.win32.0.2.2.exe/download)
 * [PrimerSeq v0.2.1](http://sourceforge.net/projects/primerseq/files/PrimerSeq/PrimerSeq.win32.0.2.1.exe/download)
 * [PrimerSeq v0.1.0](http://sourceforge.net/projects/primerseq/files/PrimerSeq/PrimerSeq.win32.0.1.0.exe/download)
+
+### Linux (Ubuntu) - hard to install
+
+* [Linux: PrimerSeq v1.0.0](http://sourceforge.net/projects/primerseq/files/PrimerSeq/PrimerSeq.1.0.0.linux.i386.tgz/download)
+* [64 bit Linux: PrimerSeq v0.2.3](http://sourceforge.net/projects/primerseq/files/PrimerSeq/PrimerSeq.debian.x64.0.2.3.tgz/download)

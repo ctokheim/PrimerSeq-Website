@@ -1,12 +1,12 @@
 ---
 layout: page
-title: "Windows Installation"
-description: "PrimerSeq Windows Installation"
+title: "Windows"
+description: "Windows Installation Guide"
 tagline: "{Quick Installation Guide}"
 ---
 {% include JB/setup %}
 
-First, the [Java JRE](http://www.oracle.com/technetwork/java/javase/downloads/java-se-jre-7-download-432155.html) must be installed on your computer. 
+First, the [Java JRE](http://www.oracle.com/technetwork/java/javase/downloads/java-se-jre-7-download-432155.html) must be installed on your computer.
 Next, you will need to download the latest version of PrimerSeq from the sourceforge [download page](http://sourceforge.net/projects/primerseq/files/PrimerSeq).
 Downloads with *"win32"* in the name are for windows. Double click the download when finished. You should now see the below installer appear.
 
