@@ -10,7 +10,7 @@ tagline: "{how-to run PrimerSeq}"
    JRE](http://www.oracle.com/technetwork/java/javase/downloads/java-se-
    jre-7-download-432155.html). You may already have Java installed, in which
    case proceed to step two.
-2. Download the latest version from [sourceforge](http://sourceforge.net/projects/primerseq/files/)
+2. Download the latest version from [sourceforge](http://sourceforge.net/projects/primerseq/files/) (*for Windows only*)
 3. Follow your OS specific installation instructions:
 
 * [Windows](windows.html)

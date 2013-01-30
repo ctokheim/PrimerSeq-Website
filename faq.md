@@ -17,7 +17,8 @@ tagline: "{Frequently Asked Questions}"
     <div class="accordion-inner">
 Sorting a GTF fails likely because of insufficient memory. You can change the allotted memory by editing the PrimerSeq.cfg
 file found in the PrimerSeq installation directory. Change the "sort" option above the 1536 MB default. You may need to install
-a 64 bit version of java or switch to computer with more memory.
+a 64 bit version of java or switch to computer with more memory. The only available PrimerSeq download
+for Windows is 32 bit. You could switch to a 64 bit linux computer.
     </div>
   </div>
 </div>
@@ -58,7 +59,8 @@ PrimerSeq does not currently have a Mac OS download. However, PrimerSeq was buil
   </div>
   <div id="collapseFour" class="accordion-body collapse">
     <div class="accordion-inner">
-PrimerSeq does support linux. There is a 32 bit download tested on Ubuntu 12.04. For best support, use Ubuntu >=12.04 or Linux Mint >=13.
+PrimerSeq does support linux, Linux Mint 13 and Ubuntu >=12.04. Follow the installation instructions
+found <a href="linux.html">here</a>.
     </div>
   </div>
 </div>

@@ -7,6 +7,8 @@ description: ""
 
 ## Current Release
 
+Follow the instructions for [Windows](windows.html) or [Linux](linux.html) after downloading.
+
 * [Windows: PrimerSeq v1.0.0.beta](http://sourceforge.net/projects/primerseq/files/PrimerSeq/PrimerSeq.1.0.0.beta.win32.exe/download)
 * [Linux: PrimerSeq v1.0.0.beta (*Source*)](https://github.com/ctokheim/PrimerSeq/archive/v1.0.0.beta.tar.gz)
 
@@ -37,13 +39,13 @@ If you want other genome sequences from Ensembl you can visit their [FTP downloa
 
 ## Archive
 
-### Windows
+### Windows - Alpha releases
 
 * [PrimerSeq v0.2.2](http://sourceforge.net/projects/primerseq/files/PrimerSeq/PrimerSeq.win32.0.2.2.exe/download)
 * [PrimerSeq v0.2.1](http://sourceforge.net/projects/primerseq/files/PrimerSeq/PrimerSeq.win32.0.2.1.exe/download)
 * [PrimerSeq v0.1.0](http://sourceforge.net/projects/primerseq/files/PrimerSeq/PrimerSeq.win32.0.1.0.exe/download)
 
-### Linux (Ubuntu) - hard to install
+### Linux - Outdated
 
 * [Linux: PrimerSeq v1.0.0](http://sourceforge.net/projects/primerseq/files/PrimerSeq/PrimerSeq.1.0.0.linux.i386.tgz/download)
 * [64 bit Linux: PrimerSeq v0.2.3](http://sourceforge.net/projects/primerseq/files/PrimerSeq/PrimerSeq.debian.x64.0.2.3.tgz/download)
