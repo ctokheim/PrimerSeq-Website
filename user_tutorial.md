@@ -163,7 +163,10 @@ Press the "Run PrimerSeq" button to start primer design.
 A dialog should appear letting you know that PrimerSeq is designing the
 primers. Once PrimerSeq is finished the dialog will disappear and a new window
 with the PrimerSeq results should appear. You can also find your output as a
-text file as specified in the **4. Select Output** step.
+text file as specified in the **4. Select Output** step. An example output text file is [here](output.txt).
+Note that for many cases primer design is successful, however some cases *Primer3* may fail to design primers.
+Try adjusting primer3 options (see **3. Edit Options**) especially *PRIMER_PRODUCT_SIZE_RANGE* which is
+the allowable primer product sizes.
 
 <center>PrimerSeq Results</center>
 <img src="plot_results.user_tutorial.png" style="display:block; margin-left:auto;margin-right:auto;" />
@@ -193,9 +196,34 @@ Press the plot button when you are ready. The button should be disabled and
 say "Ploting . . ." while PrimerSeq is creating your plot. Once PrimerSeq is
 finished, a plot window should appear as shown below. Percentage estimates are
 based on **pooled** read counts. For estimates for individual BAM files, use the
-"Save HTML" button.
+"Save Plots" button.
 
 <img src="display_plot2.png" style="display:block; margin-left:auto;margin-right:auto;" />
+</br>
+
+### Save Plots as a web page (HTML)
+
+Press the "Save Plots" button. The below dialog should appear.
+
+<img src="generate_html.png" style="display:block; margin-left:auto;margin-right:auto;" />
+</br>
+
+You will need to fill out titles and bigwig files that correspond to the BAM file(s).
+Each line has three comma separated inputs. The first is the title, second is the BAM file
+(already filled in), and the third is the corresponding BigWig file (you will need to fill in the path).
+An example is shown below:
+
+<pre style="overflow-x: scroll; white-space: nowrap;">Heart RNA-Seq Data,/media/5A0D-7889/PrimerSeq_data/hbm/heart.sorted.bam,/media/5A0D-7889/PrimerSeq_data/hbm/heart.bw<br/>
+Testes RNA-Seq Data,/media/5A0D-7889/PrimerSeq_data/hbm/testes.sorted.bam,/media/5A0D-7889/PrimerSeq_data/hbm/testes.bw
+</pre>
+
+You will also need to specify the directory you wish to save the HTML files to. When ready,
+press the "Generate Report" button. Generating the HTML may take a couple of minutes. When finished,
+the web page should automatically open in your browser. An example output can be found
+[here](output/).
+
+<iframe src="output/index.html" style="width: 100%; overflow-y: scroll; height:500px; display: block;"> text here </iframe>
+</br>
 
 ### In-Silico PCR
 
