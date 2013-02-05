@@ -41,7 +41,7 @@ $ gunzip your_file.gz
 </div>
 <div class="accordion-group">
   <div class="accordion-heading">
-    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion3" href="#collapseThree">
+    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">
       Does PrimerSeq support Mac OS?
     </a>
   </div>
@@ -53,20 +53,20 @@ PrimerSeq does not currently have a Mac OS download. However, PrimerSeq was buil
 </div>
 <div class="accordion-group">
   <div class="accordion-heading">
-    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion4" href="#collapseFour">
+    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseFour">
       Does PrimerSeq support Linux?
     </a>
   </div>
   <div id="collapseFour" class="accordion-body collapse">
     <div class="accordion-inner">
-PrimerSeq does support linux, Linux Mint 13 and Ubuntu >=12.04. Follow the installation instructions
+PrimerSeq does support linux, <b>Linux Mint 13</b> and <b>Ubuntu >=12.04</b>. Follow the installation instructions
 found <a href="linux.html">here</a>.
     </div>
   </div>
 </div>
 <div class="accordion-group">
   <div class="accordion-heading">
-    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion5" href="#collapseFive">
+    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseFive">
      PrimerSeq says the Java JRE is required, what should I do?
     </a>
   </div>
@@ -79,7 +79,7 @@ found <a href="linux.html">here</a>.
 </div>
 <div class="accordion-group">
   <div class="accordion-heading">
-    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion6" href="#collapseSix">
+    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseSix">
       How do I decompress the .2bit format?
     </a>
   </div>
@@ -91,7 +91,7 @@ You should use the <i>twoBitToFa</i> utility from UCSC. You can find the utility
 </div>
 <div class="accordion-group">
   <div class="accordion-heading">
-    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion7" href="#collapseSeven">
+    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseSeven">
       In linux, there is an error with the GNU C Library ("libc" or "glibc")?
     </a>
   </div>
@@ -103,13 +103,45 @@ You must have a GNU C Library >2.14. This means you should use a recent linux di
 </div>
 <div class="accordion-group">
   <div class="accordion-heading">
-    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion8" href="#collapseEight">
+    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseEight">
       The PrimerSeq results say that Primer3 could not design primers, what should I do?
     </a>
   </div>
   <div id="collapseEight" class="accordion-body collapse">
     <div class="accordion-inner">
 Try adjusting the allowed PCR product lengths in the Primer3 configuration file. Press <i>Edit->Primer3</i>. You can edit the allowed PCR product lengths by changing the first parameter in the displayed file.
+    </div>
+  </div>
+</div>
+<div class="accordion-group">
+  <div class="accordion-heading">
+    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseNine">
+      What coordinate format should I use?
+    </a>
+  </div>
+  <div id="collapseNine" class="accordion-body collapse">
+    <div class="accordion-inner">
+PrimerSeq assumes the first nucleotide in a chromosome is at position 0. The end coordinate is not inclusive.
+Strand information is provided as either + or -. A fictitous example is shown below.
+<br>
+
+<pre>-chr8:0-100</pre>
+This example would therefore be the first 100 nucleotides on the negative strand of chromosome 8. If using the UCSC genome browser, subtract 1 from the start coordinate.
+    </div>
+  </div>
+</div>
+<div class="accordion-group">
+  <div class="accordion-heading">
+    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTen">
+      Why does loading a FASTA, GTF, or SAM/BAM file takes a long time?
+    </a>
+  </div>
+  <div id="collapseTen" class="accordion-body collapse">
+    <div class="accordion-inner">
+The length of loading files varies. The first time you use a FASTA, PrimerSeq will need to index the FASTA
+which may take several minutes. Subsequent loading for the FASTA should be almost instantaneous. Average sized
+GTF files generally take ~1 minute to load. Loading a sorted BAM file named with a <code>.sorted.bam</code>
+extenstion should be quick. If you use a SAM file, PrimerSeq will convert the SAM file to a BAM file and then sort the resulting BAM file. This process of converting from a SAM to BAM will take a considerable ammount of time due to the typical large file sizes.
     </div>
   </div>
 </div>

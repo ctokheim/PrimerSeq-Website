@@ -201,7 +201,7 @@ based on **pooled** read counts. For estimates for individual BAM files, use the
 <img src="display_plot2.png" style="display:block; margin-left:auto;margin-right:auto;" />
 </br>
 
-### Save Plots as a web page (HTML)
+### Generate an HTML report
 
 Press the "Save Plots" button. The below dialog should appear.
 

@@ -8,7 +8,7 @@ tagline: "{Using PrimerSeq}"
 
 ## Installation
 
-PrimerSeq supports three major operating systems (Windows, Mac OS, and Linux).
+PrimerSeq supports two major operating systems (Windows and Linux).
 Please follow the instructions for your OS by clicking the appropriate link
 below.
 
@@ -68,8 +68,8 @@ by a semi-colon:
 5. **Upstream Primer** - Upstream primer sequence
 6. **Downstream Primer** - Downstream primer sequence
 7. **Average TM** - Average of the two primer TMs
-8. **Skipping Prod. Size** - Product size(s) for each isoform that does **not** contain the target exon
-9. **Inc. Prod. Size** - Product size(s) for each isoform that does contain the target exon
+8. **Skipping Prod. Size** - Product size(s) for each isoform that **does not** contain the target exon
+9. **Inc. Prod. Size** - Product size(s) for each isoform that **does** contain the target exon
 10. **Upstream Exon Coord.** - Upstream exon coordinate
 11. **Upstream Psi** - Upstream exon inclusion level
 12. **Downstream Exon Coord.** - Downstream exon coordinate
@@ -111,8 +111,7 @@ in the tool bar of the results window. The below dialog should now appear.
 </br>
 
 The correct input for human hg19 should be present by default. To use other
-species or assemblies you will need to look at the naming on the UCSC's [In-
-Silico PCR webpage](http://genome.ucsc.edu/cgi-bin/hgPcr). Leave the In-Silico
+species or assemblies you will need to look at the naming on the UCSC's [In-Silico PCR webpage](http://genome.ucsc.edu/cgi-bin/hgPcr). Leave the In-Silico
 PCR type as *UCSC Genes*. Now select the only available option from the
 "Select Target" drop-down list. When ready, press the "Run In-Silico PCR"
 button. Your default web browser should now open the results of In-Silico PCR.
