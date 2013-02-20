@@ -133,7 +133,7 @@ This example would therefore be the first 100 nucleotides on the negative strand
 <div class="accordion-group">
   <div class="accordion-heading">
     <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTen">
-      Why does loading a FASTA, GTF, or SAM/BAM file takes a long time?
+      Why does loading a FASTA, GTF, or SAM/BAM file take a long time?
     </a>
   </div>
   <div id="collapseTen" class="accordion-body collapse">
@@ -142,6 +142,54 @@ The length of loading files varies. The first time you use a FASTA, PrimerSeq wi
 which may take several minutes. Subsequent loading for the FASTA should be almost instantaneous. Average sized
 GTF files generally take ~1 minute to load. Loading a sorted BAM file named with a <code>.sorted.bam</code>
 extenstion should be quick. If you use a SAM file, PrimerSeq will convert the SAM file to a BAM file and then sort the resulting BAM file. This process of converting from a SAM to BAM will take a considerable ammount of time due to the typical large file sizes.
+    </div>
+  </div>
+</div>
+<div class="accordion-group">
+  <div class="accordion-heading">
+    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseEleven">
+      I am not using Human/hg19, what should I enter for the "Genome" and "Assembly" text fields?
+    </a>
+  </div>
+  <div id="collapseEleven" class="accordion-body collapse">
+    <div class="accordion-inner">
+Specifying a genome and assembly is needed only for <i>in-silico</i> PCR. You can find the designated "Genome"
+names in the "Genome" dropdown of <a href="http://genome.ucsc.edu/cgi-bin/hgGateway">UCSC's in-silico PCR</a>.
+You can also find the "assembly" in the "assembly" dropdown in <a href="http://genome.ucsc.edu/cgi-bin/hgGateway">UCSC's in-silico PCR</a>.
+
+For your convenience, the "Genome" and "Assembly" name of common species is below. You should type your species name <b>exactly</b> as it appears:
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Genome</th>
+      <th>Assembly</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+     <td>Human</td>
+     <td>hg19, hg18, etc.</td>
+    </tr>
+    <tr>
+     <td>Chimp</td>
+     <td>panTro4, panTro3, etc.</td>
+    </tr>
+    <tr>
+     <td>Rhesus</td>
+     <td>rheMac3, rheMac2, etc.</td>
+    </tr>
+    <tr>
+     <td>Mouse</td>
+     <td>mm10, mm9, etc.</td>
+    </tr>
+    <tr>
+     <td>Rat</td>
+     <td>rn5, rn4, etc.</td>
+    </tr>
+  </tbody>
+</table>
+
     </div>
   </div>
 </div>

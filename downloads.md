@@ -9,8 +9,8 @@ description: ""
 
 Follow the instructions for [Windows](windows.html) or [Linux](linux.html) after downloading.
 
-* [Windows: PrimerSeq v1.0.0.beta](http://sourceforge.net/projects/primerseq/files/PrimerSeq/PrimerSeq.1.0.0.beta.win32.exe/download)
-* [Linux: PrimerSeq v1.0.0.beta (*Source*)](https://github.com/ctokheim/PrimerSeq/archive/v1.0.0.beta.tar.gz)
+* [Windows: PrimerSeq v1.0.2.beta](http://sourceforge.net/projects/primerseq/files/PrimerSeq/PrimerSeq.1.0.2.beta.win32.exe/download)
+* [Linux: PrimerSeq v1.0.2.beta (*Source*)](https://github.com/ctokheim/PrimerSeq/archive/v1.0.2.beta.tar.gz)
 
 ## Annotations
 
@@ -38,6 +38,16 @@ If you want other genome sequences from Ensembl you can visit their [FTP downloa
 * [mm9](http://hgdownload.cse.ucsc.edu/goldenPath/mm9/bigZips/mm9.2bit)
 
 ## Archive
+
+### Windows
+
+* [Windows: PrimerSeq v1.0.1.beta](http://sourceforge.net/projects/primerseq/files/PrimerSeq/PrimerSeq.1.0.1.beta.win32.exe/download)
+* [Windows: PrimerSeq v1.0.0.beta](http://sourceforge.net/projects/primerseq/files/PrimerSeq/PrimerSeq.1.0.0.beta.win32.exe/download)
+
+### Linux
+
+* [Linux: PrimerSeq v1.0.1.beta (*Source*)](https://github.com/ctokheim/PrimerSeq/archive/v1.0.1.beta.tar.gz)
+* [Linux: PrimerSeq v1.0.0.beta (*Source*)](https://github.com/ctokheim/PrimerSeq/archive/v1.0.0.beta.tar.gz)
 
 ### Windows - Alpha releases
 

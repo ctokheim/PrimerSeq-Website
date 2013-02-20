@@ -65,8 +65,8 @@ by a semi-colon:
 2. **Target Coordinate** - user-specified target exon
 3. **Primer Coordinates** - Coordinates of upstream and downstream primer
 4. **Psi Target** - Estimated target exon inclusion level based on each BAM file
-5. **Upstream Primer** - Upstream primer sequence
-6. **Downstream Primer** - Downstream primer sequence
+5. **Forward Primer** - Upstream primer sequence
+6. **Reverse Primer** - Downstream primer sequence
 7. **Average TM** - Average of the two primer TMs
 8. **Skipping Prod. Size** - Product size(s) for each isoform that **does not** contain the target exon
 9. **Inc. Prod. Size** - Product size(s) for each isoform that **does** contain the target exon
@@ -75,6 +75,7 @@ by a semi-colon:
 12. **Downstream Exon Coord.** - Downstream exon coordinate
 13. **Downstream Psi** - Downstream exon inclusion level
 14. **ASM Region** - Region where alternative splicing events occur
+15. **Gene** - gene name as it occurs in the gene annotation (GTF)
 
 ### Visualization
 

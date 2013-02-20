@@ -77,9 +77,9 @@ Splicing (MATS)](http://rnaseq-mats.sourceforge.net). A small sample list of eve
 can be found [here](se.txt). The contents can be directly copied and pasted into
 the coordinates text box. A few lines are shown below.
 
-<pre>-chr10:33195990-33196071,-chr10:33189245-33190563,-chr10:33197295-33197462
+<pre>-chr10:33195990-33196071,-chr10:33197295-33197462,-chr10:33189245-33190563
 +chr3:158311170-158311210,+chr3:158310222-158310370,+chr3:158314650-158314734
--chr2:106013103-106013154,-chr2:106002817-106002997,-chr2:106015298-106015681</pre>
+-chr2:106013103-106013154,-chr2:106015298-106015681,-chr2:106002817-106002997</pre>
 
 Each line represents one skipped exon event. Each coordinate is separated by a comma. The first
 coordinate is the skipped exon. The second is the upstream flanking exon and the third
@@ -217,7 +217,7 @@ An example is shown below:
 Testes RNA-Seq Data,/media/5A0D-7889/PrimerSeq_data/hbm/testes.sorted.bam,/media/5A0D-7889/PrimerSeq_data/hbm/testes.bw
 </pre>
 
-You will also need to specify the directory you wish to save the HTML files to. When ready,
+If you need a different Genome/Assembly then Human/hg19 then please read the [FAQ](faq.html#collapseEleven) page. You will also need to specify the directory you wish to save the HTML files to. When ready,
 press the "Generate Report" button. Generating the HTML may take a couple of minutes. When finished,
 the web page should automatically open in your browser. An example output can be found
 [here](output/).
