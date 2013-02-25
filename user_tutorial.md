@@ -209,13 +209,32 @@ Press the "Save Plots" button. The below dialog should appear.
 </br>
 
 You will need to fill out titles and bigwig files that correspond to the BAM file(s).
-Each line has three comma separated inputs. The first is the title, second is the BAM file
-(already filled in), and the third is the corresponding BigWig file (you will need to fill in the path).
+**Click** on the table cell to start editing. The first column is the title, second is the BAM file
+(already filled in), and the third is the corresponding BigWig file (fill in the file path). Specifying
+a BigWig file is **optional** and is only needed to display the read depth.
 An example is shown below:
 
-<pre style="overflow-x: scroll; white-space: nowrap;">Heart RNA-Seq Data,/media/5A0D-7889/PrimerSeq_data/hbm/heart.sorted.bam,/media/5A0D-7889/PrimerSeq_data/hbm/heart.bw<br/>
-Testes RNA-Seq Data,/media/5A0D-7889/PrimerSeq_data/hbm/testes.sorted.bam,/media/5A0D-7889/PrimerSeq_data/hbm/testes.bw
-</pre>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>BAM</th>
+            <th>BigWig</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Heart RNA-Seq Data</td>
+            <td>path/to/heart.sorted.bam</td>
+            <td>path/to/heart.bw</td>
+        </tr>
+        <tr>
+            <td>Testes RNA-Seq Data</td>
+            <td>path/to/testes.sorted.bam</td>
+            <td>path/to/testes.bw</td>
+        </tr>
+    </tbody>
+</table>
 
 If you need a different Genome/Assembly then Human/hg19 then please read the [FAQ](faq.html#collapseEleven) page. You will also need to specify the directory you wish to save the HTML files to. When ready,
 press the "Generate Report" button. Generating the HTML may take a couple of minutes. When finished,
