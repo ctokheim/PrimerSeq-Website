@@ -91,18 +91,6 @@ You should use the <i>twoBitToFa</i> utility from UCSC. You can find the utility
 </div>
 <div class="accordion-group">
   <div class="accordion-heading">
-    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseSeven">
-      In linux, there is an error with the GNU C Library ("libc" or "glibc")?
-    </a>
-  </div>
-  <div id="collapseSeven" class="accordion-body collapse">
-    <div class="accordion-inner">
-You must have a GNU C Library >2.14. This means you should use a recent linux distribution like Ubuntu >=12.04. You can check your version number with the <b>ldd --version</b> command.
-    </div>
-  </div>
-</div>
-<div class="accordion-group">
-  <div class="accordion-heading">
     <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseEight">
       The PrimerSeq results say that Primer3 could not design primers, what should I do?
     </a>

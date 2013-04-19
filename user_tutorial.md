@@ -31,13 +31,13 @@ Two samples, testes and heart, from Human Body Map are used.
 Differential alternative splicing between testes and heart would
 indicate tissue specific splicing patterns.
 
-* [Testes BAM file](ftp://publicID:2wsx!QAZ@rnabioinformatics.com/PrimerSeq/testes.sorted.bam)
-* [Heart BAM file](ftp://publicID:2wsx!QAZ@rnabioinformatics.com/PrimerSeq/heart.sorted.bam)
-* [Testes BigWig file](ftp://publicID:2wsx!QAZ@rnabioinformatics.com/PrimerSeq/testes.bw)
-* [Heart BigWig file](ftp://publicID:2wsx!QAZ@rnabioinformatics.com/PrimerSeq/heart.hbm2.bw)
+* [Heart BAM file](http://mimg.ucla.edu/faculty/xing/public_data/PrimerSeq/heart.sorted.bam)
+* [Testes BAM file](http://mimg.ucla.edu/faculty/xing/public_data/PrimerSeq/testes.sorted.bam)
+* [Heart BigWig file](http://mimg.ucla.edu/faculty/xing/public_data/PrimerSeq/heart.bw)
+* [Testes BigWig File](http://mimg.ucla.edu/faculty/xing/public_data/PrimerSeq/testes.bw)
 
 You will also need a [gene annotation](http://sourceforge.net/projects/primerseq/files/GTF/Homo_sapiens.knownGene.hg19.sorted.withGenes.gtf.gz/download)
-from UCSC and the genome sequence for [hg19](ftp://ftp.ensembl.org/pub/release-69/fasta/homo_sapiens/dna/Homo_sapiens.GRCh37.69.dna_rm.primary_assembly.fa.gz).
+from UCSC and the genome sequence for [hg19](http://mimg.ucla.edu/faculty/xing/public_data/PrimerSeq/hg19.fa.gz).
 To decompress the gene annotation and the genome sequence, please see the [FAQ page](faq.html).
 
 <center>Press the "Choose . . ." buttons which are highlighted below.</center>
@@ -45,8 +45,8 @@ To decompress the gene annotation and the genome sequence, please see the [FAQ p
 
 ### FASTA
 Check the [downloads page](downloads.html) for links to genome sequences in
-FASTA format. If you are not using linux, I recommend downloading sequences
-from [Ensembl](http://www.ensembl.org/info/data/ftp/index.html). Generally the
+FASTA format. If you have access to linux, I recommend downloading sequences
+from UCSC .2bit format. Generally the
 FASTA files will be compressed so you will need to decompress the sequences
 either via command line or using a graphical interface like
 [7-Zip](http://www.7-zip.org/) (7-Zip is Windows only).
@@ -61,7 +61,7 @@ files into a single input GTF file for PrimerSeq! For more detailed
 explanations please click [here](gtf.html).
 
 ### SAM/BAM file
-You can specify one or multiple SAM or BAM files as input. In this tutorial,
+You can specify **one** or **multiple** SAM or BAM files as input. In this tutorial,
 two BAM files are used. Make sure to hold down the ctrl key to select multiple
 files. SAM/BAM files are the typical output format from read aligners like
 [Tophat](http://tophat.cbcb.umd.edu/). The SAM/BAM file allows PrimerSeq to
@@ -180,8 +180,7 @@ Plots" button in the results window. A dialog should appear as shown below.
 </br>
 
 You will need a BigWig file(s) for plotting the results (see more information
-below). Note, you may specify more than one BigWig file by selecting multiple
-files in the file chooser. Also you should specify one of the targets you wish
+below).  Also you should specify one of the targets you wish
 to plot in the drop down list.
 
 ### BigWig
@@ -195,8 +194,21 @@ this tutorial we provide you with the BigWig files.
 Press the plot button when you are ready. The button should be disabled and
 say "Ploting . . ." while PrimerSeq is creating your plot. Once PrimerSeq is
 finished, a plot window should appear as shown below. Percentage estimates are
-based on **pooled** read counts. For estimates for individual BAM files, use the
-"Save Plots" button.
+based based on individual BAM files (mapped read counts).
+
+<img src="display_plot3.png" style="display:block; margin-left:auto;margin-right:auto;" />
+</br>
+
+### Evaluating AS Event
+
+Press the "Evaluate AS Event" button to open a dialog. To evaluate AS events, PrimerSeq
+uses pooled data to find Alternative Splicing events.
+
+<img src="evaluate_as_dialog.png" style="display:block; margin-left:auto;margin-right:auto;" />
+</br>
+
+Results based on **pooled** read counts. Note, you may specify more than
+one BigWig file by selecting multiple files in the file chooser (hold down control).
 
 <img src="display_plot2.png" style="display:block; margin-left:auto;margin-right:auto;" />
 </br>
@@ -241,7 +253,7 @@ press the "Generate Report" button. Generating the HTML may take a couple of min
 the web page should automatically open in your browser. An example output can be found
 [here](output/).
 
-<iframe src="output/index.html" style="width: 100%; overflow-y: scroll; height:500px; display: block;"> text here </iframe>
+<iframe src="output/index.html" frameborder="0" style="width: 100%; overflow-y: scroll; height:500px; display: block;"> text here </iframe>
 </br>
 
 ### In-Silico PCR

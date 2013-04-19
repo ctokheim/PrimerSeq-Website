@@ -20,9 +20,9 @@ following.
 * Super user access
 
 {% highlight bash %}
-$ wget https://github.com/ctokheim/PrimerSeq/archive/v1.0.3.beta.tar.gz
-$ tar xvzf v1.0.3.beta.tar.gz
-$ cd PrimerSeq-1.0.3.beta
+$ wget https://github.com/ctokheim/PrimerSeq/archive/v1.1.2.beta.tar.gz
+$ tar xvzf v1.1.2.beta.tar.gz
+$ cd PrimerSeq-1.1.2.beta
 $ sudo ./install.ubuntu.sh
 {% endhighlight %}
 

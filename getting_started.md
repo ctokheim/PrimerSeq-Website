@@ -25,11 +25,12 @@ below image, although aesthetics may differ depending on your OS.
 
 ### Loading Data
 
-To load sample data, press <i>File -> Load Ex.</i> in the top menu. The sample data should take only a few seconds to load.
+To load sample data, press <i>File -> Load Quick Ex.</i> in the top menu. The sample data should
+take only a few seconds to load. The RNA-Seq data is from heart tissue sequenced from Illumina's Human BodyMap 2.0 project.
 PrimerSeq should now look like the following:
 
 <center>PrimerSeq when data is loaded</center>
-<img src="load_ex.png" style="display:block;margin-left:auto;margin-right:auto;" />
+<img src="load_quick_ex.png" style="display:block;margin-left:auto;margin-right:auto;" />
 </br>
 
 Notice that a FASTA, GTF, and BAM file is loaded for you in this example. The
@@ -84,22 +85,24 @@ check of the primer design. Press the "Create Plots" button in the results
 window tool bar. A dialog should now appear. To plot the results, you need to
 specify a BigWig file and the target exon of interest (in this example there
 is only one). You can find a BigWig file for the example in the PrimerSeq
-installation directory `example/example.bw`. Select the only available option
+installation directory `example/example.bw`. Click on the BigWig cell and then type
+`example/example.bw`. Next, select the only available option
 in the "Select Target" drop-down list.
 
-<center>Choose one or multiple BigWig file(s) and then select your target exon</center>
+<center>Type the file path of your BigWig file and then select your target exon</center>
 <img src="plot_example.png" style="display:block;margin-left:auto;margin-right:auto;" />
 </br>
 
 Press the "Plot" button to create a plot. If everything worked correctly, you
 should see the below plot. Inclusion level estimates in the below plot are
-based on pooled read counts from all BAM/SAM file(s) provided.
+based on read counts from individual SAM/BAM file(s).
 
 <center>Plotting of PrimerSeq Results</center>
 <img src="display_plot.png" style="display:block;margin-left:auto;margin-right:auto;" />
 </br>
 
-This example is of a *Skipped Exon* event. Skipped exons happens when a single exon is either included or not included.
+This example is of a *Skipped Exon* event. Skipped exons happens when a single exon
+is either included or not included.
 
 ### In-Silico PCR
 
@@ -120,9 +123,51 @@ The result should match the result from the PrimerSeq output.
 
 <center>In-Silico PCR Results</center>
 <img src="insilico_pcr_results.png" style="display:block;margin-left:auto;margin-right:auto;" />
+</br>
 
 You can perform In-Silico PCR on the genome (not shown) instead of UCSC's
-transcripts by selecting *"Genome"* from the *"Select Type"* dropdown. This
+transcripts by selecting *"Genome"* from the *"Select Type"* drop-down. This
 may be necessary if you are using a GTF file from other sources like Ensembl.
 You will need to significantly increase the *Max Product Size* since the
 product lengths will include introns.
+
+## Using Multiple Exons
+
+The above example just used one exon. However, PrimerSeq can design primers for
+many primers sequentially. In the initial GUI, press *File -> Load Larger Ex.*.
+You should see a list of ten exons now instead of just one (*see below*). The same
+heart RNA-Seq data from Illumina's Human BodyMap 2.0 project is used like the above example.
+
+<center>Press <i>File -> Load Larger Ex.</i></center>
+<img src="load_ex.png" style="display:block;margin-left:auto;margin-right:auto;" />
+</br>
+
+The "Coordinates" text area now has a list of coordinates for 10 exons. Next, select an
+output file and then press the "Run PrimerSeq" button. You should see results for 10 exons
+when the primer design is finished (*see below*).
+
+<center>10 Exon Primer Design Results</center>
+<img src="view_output.larger_ex.png" style="display:block;margin-left:auto;margin-right:auto;" />
+</br>
+
+Although you can look at plots and in-silico pcr for each exon, the easiest way is to click the
+"Save Plots" button (the third button from the left). This will bring up a dialog as shown below.
+
+
+<center>Fill in Necessary Information</center>
+<img src="save_html.png" style="display:block;margin-left:auto;margin-right:auto;" />
+</br>
+
+You will need to enter "example/example.bw" as the BigWig file since it is necessary for
+displaying read depth. You may also edit the *Title*. Do not change the "Genome" or "Assembly"
+text fields. You will, however, need to select a directory to save the results by pressing the
+"Choose ..." button. When finished, press the "Generate Report" button. While running, the button
+should now say "generating ...". When finished, a web browser should automatically open the results
+like shown below.
+
+<iframe src="getting_started_output/index.html" frameborder="0" style="width: 100%; overflow-y: scroll; height:350px; display: block;"> text here </iframe>
+</br>
+
+Notice, you can just click links to see plots and run UCSC's in-silico PCR. Even though the 9th example
+exon is a complex alternative splicing event, PrimerSeq designed the primers on **highly included** flanking
+exons. This allows primer design for more cases then just simple skipped exon events while simultaneously keeping PCR product lengths reasonable. For detailed instructions on running and configuring PrimerSeq, please read the [user tutorial](user_tutorial.html).

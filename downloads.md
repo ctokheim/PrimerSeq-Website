@@ -9,8 +9,8 @@ description: ""
 
 Follow the instructions for [Windows](windows.html) or [Linux](linux.html) after downloading.
 
-* [Windows: PrimerSeq v1.0.3.beta](http://sourceforge.net/projects/primerseq/files/PrimerSeq/PrimerSeq.1.0.3.beta.win32.exe/download)
-* [Linux: PrimerSeq v1.0.3.beta (*Source*)](https://github.com/ctokheim/PrimerSeq/archive/v1.0.3.beta.tar.gz)
+* [Windows: PrimerSeq v1.1.2.beta](http://sourceforge.net/projects/primerseq/files/PrimerSeq/PrimerSeq.1.1.2.beta.win32.exe/download)
+* [Linux: PrimerSeq v1.1.2.beta (*Source*)](https://github.com/ctokheim/PrimerSeq/archive/v1.1.2.beta.tar.gz)
 
 ## Annotations
 
@@ -25,28 +25,33 @@ UCSC's known gene annotation is recommended over ensembl.
 
 ### FASTA
 
-#### Ensembl (hard masked)
+* [hg19](http://mimg.ucla.edu/faculty/xing/public_data/PrimerSeq/hg19.fa.gz)
+* [mm9](http://mimg.ucla.edu/faculty/xing/public_data/PrimerSeq/mm9.fa.gz)
 
-If you want other genome sequences from Ensembl you can visit their [FTP download site](www.ensembl./info/data/ftp).
+### Test Data
 
-* [GRCh37 (hg19)](ftp://ftp.ensembl.org/pub/release-69/fasta/homo_sapiens/dna/Homo_sapiens.GRCh37.69.dna_rm.primary_assembly.fa.gz)
-* [NCBIM37 (mm9)](ftp://ftp.ensembl.org/pub/release-67/fasta/mus_musculus/dna/Mus_musculus.NCBIM37.67.dna_rm.toplevel.fa.gz)
-
-#### UCSC (.2bit format)
-
-* [hg19](http://hgdownload.cse.ucsc.edu/goldenPath/hg19/bigZips/hg19.2bit)
-* [mm9](http://hgdownload.cse.ucsc.edu/goldenPath/mm9/bigZips/mm9.2bit)
+* [Heart BAM file](http://mimg.ucla.edu/faculty/xing/public_data/PrimerSeq/heart.sorted.bam)
+* [Testes BAM file](http://mimg.ucla.edu/faculty/xing/public_data/PrimerSeq/testes.sorted.bam)
+* [Heart BigWig file](http://mimg.ucla.edu/faculty/xing/public_data/PrimerSeq/heart.bw)
+* [Testes BigWig File](http://mimg.ucla.edu/faculty/xing/public_data/PrimerSeq/testes.bw)
 
 ## Archive
 
 ### Windows
 
+* [Windows: PrimerSeq v1.1.1.beta](http://sourceforge.net/projects/primerseq/files/PrimerSeq/PrimerSeq.1.1.1.beta.win32.exe/download)
+* [Windows: PrimerSeq v1.1.0.beta](http://sourceforge.net/projects/primerseq/files/PrimerSeq/PrimerSeq.1.1.0.beta.win32.exe/download)
+* [Windows: PrimerSeq v1.0.3.beta](http://sourceforge.net/projects/primerseq/files/PrimerSeq/PrimerSeq.1.0.3.beta.win32.exe/download)
 * [Windows: PrimerSeq v1.0.2.beta](http://sourceforge.net/projects/primerseq/files/PrimerSeq/PrimerSeq.1.0.2.beta.win32.exe/download)
 * [Windows: PrimerSeq v1.0.1.beta](http://sourceforge.net/projects/primerseq/files/PrimerSeq/PrimerSeq.1.0.1.beta.win32.exe/download)
 * [Windows: PrimerSeq v1.0.0.beta](http://sourceforge.net/projects/primerseq/files/PrimerSeq/PrimerSeq.1.0.0.beta.win32.exe/download)
 
 ### Linux
 
+* [Linux: PrimerSeq v1.1.1.beta (*Source*)](https://github.com/ctokheim/PrimerSeq/archive/v1.1.1.beta.tar.gz)
+* [Linux: PrimerSeq v1.1.0.beta (*Source*)](https://github.com/ctokheim/PrimerSeq/archive/v1.1.0.beta.tar.gz)
+* [Linux: PrimerSeq v1.0.4.beta (*Source*)](https://github.com/ctokheim/PrimerSeq/archive/v1.0.4.beta.tar.gz)
+* [Linux: PrimerSeq v1.0.3.beta (*Source*)](https://github.com/ctokheim/PrimerSeq/archive/v1.0.3.beta.tar.gz)
 * [Linux: PrimerSeq v1.0.2.beta (*Source*)](https://github.com/ctokheim/PrimerSeq/archive/v1.0.2.beta.tar.gz)
 * [Linux: PrimerSeq v1.0.1.beta (*Source*)](https://github.com/ctokheim/PrimerSeq/archive/v1.0.1.beta.tar.gz)
 * [Linux: PrimerSeq v1.0.0.beta (*Source*)](https://github.com/ctokheim/PrimerSeq/archive/v1.0.0.beta.tar.gz)
